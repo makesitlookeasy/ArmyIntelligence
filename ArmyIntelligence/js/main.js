@@ -8,33 +8,25 @@ function preload() {
 
 }
 
-var sprites;
+var red;
+var blue;
 
 function create() {
+    game.physics.startSystem(Phaser.Physics.ARCADE);
 
-    //  Here we create a group, populate it with sprites, give them all a random velocity
-    //  and then check the group against itself for collision
-
-    sprites = game.add.physicsGroup(Phaser.Physics.ARCADE);
-
-    for (var i = 0; i < 45; i++)
-    {
-        var s = sprites.create(game.rnd.integerInRange(100, 700), game.rnd.integerInRange(32, 200), 'orb-blue');
-        var s2 = sprites.create(game.rnd.integerInRange(100, 700), game.rnd.integerInRange(32, 200), 'orb-red');
-        s.animations.add('spin', [0, 1, 2, 3]);
-        s.body.velocity.set(game.rnd.integerInRange(-200, 200), game.rnd.integerInRange(-200, 200));
-        s2.animations.add('spin', [0, 1, 2, 3]);
-        s2.body.velocity.set(game.rnd.integerInRange(-200, 200), game.rnd.integerInRange(-200, 200));
-    }
-
-    sprites.setAll('body.collideWorldBounds', true);
-    sprites.setAll('body.bounce.x', 1);
-    sprites.setAll('body.bounce.y', 1);
+    red = game.add.sprite(100, 100, 'orb-red');
+    game.physics.enable(red, Phaser.Physics.ARCADE);
+    blue = game.add.sprite(400, 300, 'orb-blue');
+    game.physics.enable(blue, Phaser.Physics.ARCADE);
+    blue.body.velocity.setTo(game.rnd.integerInRange(-50,50), game.rnd.integerInRange(-50,50));
 
 }
 
 function update() {
 
-    game.physics.arcade.collide(sprites);
+    game.physics.arcade.moveToObject(red, blue, 50, 500);
 
+    if(game.physics.arcade.distanceBetween(red, blue) < 25){
+        game.stage.backgroundColor = Phaser.Color.getRandomColor(50, 255, 255);
+    }
 }
