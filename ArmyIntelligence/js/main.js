@@ -10,9 +10,7 @@ function preload() {
 
     game.load.image('player', 'sprites/phaser-dude.png');
     game.load.image('platform', 'sprites/platform.png');
-
-    game.load.image('orb-blue', 'assets/sprites/orb-blue.png', 32, 32);
-    game.load.image('orb-red', 'assets/sprites/orb-red.png', 32, 32);
+    game.load.image('arrow', 'sprites/arrow.png');
 
 }
 
@@ -20,8 +18,8 @@ var player;
 var platforms;
 var cursors;
 var jumpButton;
-var reds;
-var blues;
+var leftButton;
+var rightButton;
 
 function create() {
 
@@ -42,11 +40,18 @@ function create() {
 
     cursors = game.input.keyboard.createCursorKeys();
     jumpButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+    rightButton = game.add.button(200,  game.world.height - 150, 'arrow', rightClick, this);
+    rightButton.scale.setTo(2,2);
+    leftButton = game.add.button(100,  game.world.height - 150, 'arrow', leftClick, this)
+    leftButton.anchor.setTo(0.5,0.5);
+    leftButton.angle + 5;
+    leftButton.scale.setTo(2,2);
 }
 
 function update() {
-    game.physics.arcade.collide(player, platforms);
 
+    game.physics.arcade.collide(player, platforms);
     player.body.velocity.x = 0;
 
     if (cursors.left.isDown)
@@ -62,4 +67,12 @@ function update() {
     {
         player.body.velocity.y = -400;
     }
+}
+
+function rightClick(){
+
+}
+
+function leftClick(){
+
 }
