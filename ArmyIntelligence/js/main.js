@@ -7,6 +7,7 @@ function preload() {
 
     game.load.image('platform', 'assets/sprites/platform.png');
     game.load.image('grassFloor', 'assets/sprites/grassFloor.png');
+    game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
     game.load.image('arrow', 'assets/sprites/arrow.png');
     game.load.image('orb', 'assets/sprites/orb-green.png');
 
@@ -42,6 +43,7 @@ var facingLeft;
 // UI Vars
 var score;
 var scoreText;
+var touchControls;
 
 
 function create() {
@@ -57,7 +59,8 @@ function create() {
 
     // Platforms
     platforms = game.add.physicsGroup();
-    platforms.create(0, 450, 'grassFloor');
+    platform1 = platforms.create(0, 450, 'grassFloor');
+    platform2 = platforms.create(50, 300, 'grassPlatform');
     platforms.setAll('body.immovable', true);
 
     // Keyboard Input
@@ -70,7 +73,6 @@ function create() {
     rightButton.scale.setTo(2,2);
     rightButton.onInputDown.add(rightDown, this);
     rightButton.onInputUp.add(rightUp, this);
-    console.log(rightButton);
         // Left Button
     leftButton = game.add.button(50 ,  game.world.height - 120, 'arrow', null, this)
     leftButton.anchor.setTo(1,1);
@@ -95,25 +97,30 @@ function create() {
     buttonState = 0;
     score = 0;
     scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
+    touchControls = false;
 }
 
 function update() {
 
     score++;
     scoreText.text = 'SCORE: ' + score;
-
-    game.physics.arcade.collide(platforms, bird);
+    game.physics.arcade.collide(bird, platforms);
     bird.body.velocity.x = 0;
-
-    // Randomly change button positions on interval
     timeElapsed++;
+    moveButtons();
+    buttonPosition();
+    motion();
+    keyboardControls();
+}
+
+function moveButtons(){
     if(timeElapsed > randomInterval){
         randomInterval = game.rnd.integerInRange(300,800);
         timeElapsed = 0;
         buttonState = game.rnd.integerInRange(0,2);
     }
-
-    // Button position cases
+}
+function buttonPosition(){
     switch(buttonState){
         case 0:
             leftButton.x = position1;
@@ -131,7 +138,8 @@ function update() {
             jumpButton.x = position2;
             break;
     }
-
+}
+function motion(){
     // Player Motion Logic
     if(movingLeft){
         bird.body.velocity.x = -250;
@@ -147,52 +155,57 @@ function update() {
             facingLeft = false;
         }
     }
-
-    // Keyboard Motion
-    if (cursors.left.isDown)
-    {
-        bird.x += -5;
-        if(!facingLeft){
-            bird.scale.x *= -1;
-            facingLeft = true;
+}
+function keyboardControls(){
+    if(touchControls == false){
+        // Keyboard Motion
+        if (cursors.left.isDown)
+        {
+            movingLeft = true;
+            movingRight = false;
+            if(!facingLeft){
+                bird.scale.x *= -1;
+                facingLeft = true;
+            }
         }
-    }
-    else if (cursors.right.isDown)
-    {
-        bird.x += 5;
-        if(facingLeft){
-            bird.scale.x *= -1;
-            facingLeft = false;
+        if(cursors.left.isUp){
+            movingLeft = false;
         }
-    }
-    if (jumpKey.isDown && (bird.body.onFloor() || bird.body.touching.down))
-    {
-        bird.body.velocity.y = -400;
+        if (cursors.right.isDown)
+        {
+            movingRight = true;
+            movingLeft = false;
+            if(facingLeft){
+                bird.scale.x *= -1;
+                facingLeft = false;
+            }
+        }
+        if(cursors.right.isUp){
+            movingRight = false;
+        }
+        if (jumpKey.isDown && (bird.body.onFloor() || bird.body.touching.down))
+        {
+            bird.body.velocity.y = -400;
+        }
     }
 }
-
-
-// Button Motion
 function rightDown(){
     movingLeft = false;
     movingRight = true;
 }
-
 function rightUp(){
     movingRight = false;
 }
-
 function leftDown(){
     movingLeft = true;
     movingRight = false;
 }
-
 function leftUp(){
     movingLeft = false;
 }
-
 function jumpClick(){
     if(bird.body.onFloor() || bird.body.touching.down) {
         bird.body.velocity.y = -400;
     }
 }
+
