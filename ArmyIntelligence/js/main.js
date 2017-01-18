@@ -16,8 +16,11 @@ function preload() {
 
 }
 
+// Physics Objects
 var bird;
 var platforms;
+
+// Button Vars
 var cursors;
 var jumpButton;
 var leftButton;
@@ -25,12 +28,18 @@ var rightButton;
 var position1 = 50;
 var position2 = 200;
 var position3 = 600;
+var buttonState;
+
+// Timing Vars
 var randomInterval;
 var timeElapsed;
-var buttonState;
+
+// Motions Vars
 var movingLeft;
 var movingRight;
 var facingLeft;
+
+// UI Vars
 var score;
 var scoreText;
 
@@ -51,6 +60,7 @@ function create() {
     platforms.create(0, 450, 'grassFloor');
     platforms.setAll('body.immovable', true);
 
+    // Keyboard Input
     cursors = game.input.keyboard.createCursorKeys();
     jumpKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
@@ -72,13 +82,17 @@ function create() {
     jumpButton = game.add.button(600, game.world.height - 120, 'orb', jumpClick, this);
     jumpButton.scale.setTo(4,4);
 
+    // Timing Init
     randomInterval = game.rnd.integerInRange(300,800);
     timeElapsed = 0;
-    buttonState = 0;
+
+    // Motion Init
     movingLeft = false;
     movingRight = false;
     facingLeft = true;
 
+    // UI Init
+    buttonState = 0;
     score = 0;
     scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
 }
@@ -91,6 +105,7 @@ function update() {
     game.physics.arcade.collide(platforms, bird);
     bird.body.velocity.x = 0;
 
+    // Randomly change button positions on interval
     timeElapsed++;
     if(timeElapsed > randomInterval){
         randomInterval = game.rnd.integerInRange(300,800);
@@ -98,6 +113,7 @@ function update() {
         buttonState = game.rnd.integerInRange(0,2);
     }
 
+    // Button position cases
     switch(buttonState){
         case 0:
             leftButton.x = position1;
@@ -116,6 +132,7 @@ function update() {
             break;
     }
 
+    // Player Motion Logic
     if(movingLeft){
         bird.body.velocity.x = -250;
         if(!facingLeft){
