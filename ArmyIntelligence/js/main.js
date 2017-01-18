@@ -61,6 +61,7 @@ function create() {
     rightButton.scale.setTo(2,2);
     rightButton.onInputDown.add(rightDown, this);
     rightButton.onInputUp.add(rightUp, this);
+    console.log(rightButton);
         // Left Button
     leftButton = game.add.button(50 ,  game.world.height - 150, 'arrow', null, this)
     leftButton.anchor.setTo(1,1);
@@ -127,23 +128,26 @@ function update() {
         bird.body.velocity.x = 250;
         if(facingLeft){
             bird.scale.x *= -1;
-            facingLeft = false;        }
+            facingLeft = false;
+        }
     }
 
     // Keyboard Motion
     if (cursors.left.isDown)
     {
-        movingLeft = true;
-        movingRight = false;
+        bird.x += -5;
+        if(!facingLeft){
+            bird.scale.x *= -1;
+            facingLeft = true;
+        }
     }
     else if (cursors.right.isDown)
     {
-        movingRight = true;
-        movingLeft = false;
-    }
-    else if (cursors.left.onUp && cursors.right.onUp){
-        movingLeft = false;
-        movingRight = false;
+        bird.x += 5;
+        if(facingLeft){
+            bird.scale.x *= -1;
+            facingLeft = false;
+        }
     }
     if (jumpKey.isDown && (bird.body.onFloor() || bird.body.touching.down))
     {
@@ -151,9 +155,11 @@ function update() {
     }
 }
 
+
+// Button Motion
 function rightDown(){
-    movingRight = true;
     movingLeft = false;
+    movingRight = true;
 }
 
 function rightUp(){
