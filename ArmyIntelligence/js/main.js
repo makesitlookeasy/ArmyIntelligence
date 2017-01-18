@@ -5,16 +5,18 @@ function preload() {
 
     game.stage.backgroundColor = '#85b5e1';
 
-    game.load.image('player', 'assets/sprites/phaser-dude.png');
     game.load.image('platform', 'assets/sprites/platform.png');
+    game.load.image('grassFloor', 'assets/sprites/grassFloor.png');
     game.load.image('arrow', 'assets/sprites/arrow.png');
     game.load.image('orb', 'assets/sprites/orb-green.png');
+
+    game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
 
     game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
 
 }
 
-var player;
+var bird;
 var platforms;
 var cursors;
 var jumpButton;
@@ -28,6 +30,7 @@ var timeElapsed;
 var buttonState;
 var movingLeft;
 var movingRight;
+var facingLeft;
 var score;
 var scoreText;
 
@@ -35,15 +38,18 @@ var scoreText;
 function create() {
 
     // Player Sprite
-    player = game.add.sprite(100, 200, 'player');
-    game.physics.arcade.enable(player);
-    player.body.collideWorldBounds = true;
-    player.body.gravity.y = 500;
+    bird = game.add.sprite(50, 200, 'bird');
+    bird.anchor.setTo(0.5, 0.5);
+    bird.animations.add('flap', [4,5,6,7,]);
+    bird.animations.play('flap', 10, true);
+    game.physics.arcade.enable(bird);
+    bird.body.collideWorldBounds = true;
+    bird.body.gravity.y = 500;
 
     // Platforms
     platforms = game.add.physicsGroup();
     platforms.create(500, 150, 'platform');
-    platforms.create(0, 300, 'platform');
+    platforms.create(0, 400, 'grassFloor');
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
@@ -71,6 +77,7 @@ function create() {
     buttonState = 0;
     movingLeft = false;
     movingRight = false;
+    facingLeft = true;
 
     score = 0;
     scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
@@ -81,8 +88,8 @@ function update() {
     score++;
     scoreText.text = 'SCORE: ' + score;
 
-    game.physics.arcade.collide(player, platforms);
-    player.body.velocity.x = 0;
+    game.physics.arcade.collide(platforms, bird);
+    bird.body.velocity.x = 0;
 
     timeElapsed++;
     if(timeElapsed > randomInterval){
@@ -110,25 +117,37 @@ function update() {
     }
 
     if(movingLeft){
-        player.body.velocity.x = -250;
+        bird.body.velocity.x = -250;
+        if(!facingLeft){
+            bird.scale.x *= -1;
+            facingLeft = true;
+        }
     }
     if(movingRight){
-        player.body.velocity.x = 250;
+        bird.body.velocity.x = 250;
+        if(facingLeft){
+            bird.scale.x *= -1;
+            facingLeft = false;        }
     }
 
     // Keyboard Motion
     if (cursors.left.isDown)
     {
-        player.body.velocity.x = -250;
+        movingLeft = true;
+        movingRight = false;
     }
     else if (cursors.right.isDown)
     {
-        player.body.velocity.x = 250;
+        movingRight = true;
+        movingLeft = false;
     }
-
-    if (jumpKey.isDown && (player.body.onFloor() || player.body.touching.down))
+    else if (cursors.left.onUp && cursors.right.onUp){
+        movingLeft = false;
+        movingRight = false;
+    }
+    if (jumpKey.isDown && (bird.body.onFloor() || bird.body.touching.down))
     {
-        player.body.velocity.y = -400;
+        bird.body.velocity.y = -400;
     }
 }
 
@@ -151,7 +170,7 @@ function leftUp(){
 }
 
 function jumpClick(){
-    if(player.body.onFloor() || player.body.touching.down) {
-        player.body.velocity.y = -400;
+    if(bird.body.onFloor() || bird.body.touching.down) {
+        bird.body.velocity.y = -400;
     }
 }
