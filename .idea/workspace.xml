@@ -23,8 +23,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
+            <state relative-caret-position="210">
+              <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -36,6 +36,7 @@
     <findStrings>
       <find>player</find>
       <find>cursor</find>
+      <find>col</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -55,7 +56,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="657" />
+    <option name="width" value="678" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectView">
@@ -142,15 +143,15 @@
       <workItem from="1484015093293" duration="3718000" />
       <workItem from="1484079042190" duration="10858000" />
       <workItem from="1484165209661" duration="718000" />
-      <workItem from="1484700888920" duration="8054000" />
+      <workItem from="1484700888920" duration="8939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23348000" />
+    <option name="totallyTimeSpent" value="24233000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="657" height="800" extended-state="0" />
+    <frame x="0" y="0" width="678" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28056425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -192,8 +193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="150" column="5" lean-forward="false" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="50" column="43" lean-forward="true" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding />
         </state>
       </provider>

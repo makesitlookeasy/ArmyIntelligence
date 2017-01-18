@@ -48,8 +48,7 @@ function create() {
 
     // Platforms
     platforms = game.add.physicsGroup();
-    platforms.create(500, 150, 'platform');
-    platforms.create(0, 400, 'grassFloor');
+    platforms.create(0, 450, 'grassFloor');
     platforms.setAll('body.immovable', true);
 
     cursors = game.input.keyboard.createCursorKeys();
@@ -57,20 +56,20 @@ function create() {
 
     // Buttons
         // Right Button
-    rightButton = game.add.button(200,  game.world.height - 150, 'arrow', null, this);
+    rightButton = game.add.button(200,  game.world.height - 120, 'arrow', null, this);
     rightButton.scale.setTo(2,2);
     rightButton.onInputDown.add(rightDown, this);
     rightButton.onInputUp.add(rightUp, this);
     console.log(rightButton);
         // Left Button
-    leftButton = game.add.button(50 ,  game.world.height - 150, 'arrow', null, this)
+    leftButton = game.add.button(50 ,  game.world.height - 120, 'arrow', null, this)
     leftButton.anchor.setTo(1,1);
     leftButton.angle = 180;
     leftButton.scale.setTo(2,2);
     leftButton.onInputDown.add(leftDown, this);
     leftButton.onInputUp.add(leftUp, this);
         // Jump Button
-    jumpButton = game.add.button(600, game.world.height - 150, 'orb', jumpClick, this);
+    jumpButton = game.add.button(600, game.world.height - 120, 'orb', jumpClick, this);
     jumpButton.scale.setTo(4,4);
 
     randomInterval = game.rnd.integerInRange(300,800);
