@@ -31,13 +31,7 @@ var playState = {
         generatePlayer();
         enemies = game.add.physicsGroup();
         generateEnemy();
-        platforms = game.add.physicsGroup();
-        platform1 = platforms.create(0, 450, 'grassFloor');
-        platform2 = platforms.create(70, 300, 'cloud1');
-        platform2.scale.setTo(0.6, 0.5);
-        platform3 = platforms.create(400, 150, 'cloud1');
-        platform3.scale.setTo(0.6, 0.5);
-        platforms.setAll('body.immovable', true);
+        generatePlatforms();
 
         // Keyboard Input
         cursors = game.input.keyboard.createCursorKeys();
@@ -183,6 +177,15 @@ function jumpClick(){
         bird.body.velocity.y = -400;
     }
 }
+function generatePlatforms(){
+    platforms = game.add.physicsGroup();
+    platform1 = platforms.create(0, 450, 'grassFloor');
+    platform2 = platforms.create(70, 300, 'cloud1');
+    platform2.scale.setTo(0.6, 0.5);
+    platform3 = platforms.create(400, 150, 'cloud1');
+    platform3.scale.setTo(0.6, 0.5);
+    platforms.setAll('body.immovable', true);
+}
 
 function generatePlayer(){
     bird = game.add.sprite(200, 400, 'bird');
@@ -194,7 +197,6 @@ function generatePlayer(){
     bird.body.gravity.y = 500;
     bird.scale.setTo(0.75);
 }
-
 function generateEnemy(){
     enemy = enemies.create(100, 100, 'rock');
     enemy.animations.add('yell');
