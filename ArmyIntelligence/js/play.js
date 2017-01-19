@@ -1,22 +1,3 @@
-
-//var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
-
-function preload() {
-
-    game.stage.backgroundColor = '#85b5e1';
-
-    game.load.image('platform', 'assets/sprites/platform.png');
-    game.load.image('grassFloor', 'assets/sprites/grassFloor.png');
-    game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
-    game.load.image('arrow', 'assets/sprites/arrow.png');
-    game.load.image('orb', 'assets/sprites/orb-green.png');
-
-    game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
-
-    game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
-
-}
-
 // Physics Objects
 var bird;
 var platforms;
@@ -45,73 +26,71 @@ var score;
 var scoreText;
 var touchControls;
 
+var playState = {
+    create: function(){
+        // Player Sprite
+        bird = game.add.sprite(50, 200, 'bird');
+        bird.anchor.setTo(0.5, 0.5);
+        bird.animations.add('flap', [4,5,6,7,]);
+        bird.animations.play('flap', 10, true);
+        game.physics.arcade.enable(bird);
+        bird.body.collideWorldBounds = true;
+        bird.body.gravity.y = 500;
 
-function create() {
+        // Platforms
+        platforms = game.add.physicsGroup();
+        platform1 = platforms.create(0, 450, 'grassFloor');
+        platform2 = platforms.create(50, 300, 'grassPlatform');
+        platforms.setAll('body.immovable', true);
 
-    // Player Sprite
-    bird = game.add.sprite(50, 200, 'bird');
-    bird.anchor.setTo(0.5, 0.5);
-    bird.animations.add('flap', [4,5,6,7,]);
-    bird.animations.play('flap', 10, true);
-    game.physics.arcade.enable(bird);
-    bird.body.collideWorldBounds = true;
-    bird.body.gravity.y = 500;
+        // Keyboard Input
+        cursors = game.input.keyboard.createCursorKeys();
+        jumpKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-    // Platforms
-    platforms = game.add.physicsGroup();
-    platform1 = platforms.create(0, 450, 'grassFloor');
-    platform2 = platforms.create(50, 300, 'grassPlatform');
-    platforms.setAll('body.immovable', true);
-
-    // Keyboard Input
-    cursors = game.input.keyboard.createCursorKeys();
-    jumpKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-
-    // Buttons
+        // Buttons
         // Right Button
-    rightButton = game.add.button(200,  game.world.height - 120, 'arrow', null, this);
-    rightButton.scale.setTo(2,2);
-    rightButton.onInputDown.add(rightDown, this);
-    rightButton.onInputUp.add(rightUp, this);
+        rightButton = game.add.button(200,  game.world.height - 120, 'arrow', null, this);
+        rightButton.scale.setTo(2,2);
+        rightButton.onInputDown.add(rightDown, this);
+        rightButton.onInputUp.add(rightUp, this);
         // Left Button
-    leftButton = game.add.button(50 ,  game.world.height - 120, 'arrow', null, this)
-    leftButton.anchor.setTo(1,1);
-    leftButton.angle = 180;
-    leftButton.scale.setTo(2,2);
-    leftButton.onInputDown.add(leftDown, this);
-    leftButton.onInputUp.add(leftUp, this);
+        leftButton = game.add.button(50 ,  game.world.height - 120, 'arrow', null, this)
+        leftButton.anchor.setTo(1,1);
+        leftButton.angle = 180;
+        leftButton.scale.setTo(2,2);
+        leftButton.onInputDown.add(leftDown, this);
+        leftButton.onInputUp.add(leftUp, this);
         // Jump Button
-    jumpButton = game.add.button(600, game.world.height - 120, 'orb', jumpClick, this);
-    jumpButton.scale.setTo(4,4);
+        jumpButton = game.add.button(600, game.world.height - 120, 'orb', jumpClick, this);
+        jumpButton.scale.setTo(4,4);
 
-    // Timing Init
-    randomInterval = game.rnd.integerInRange(300,800);
-    timeElapsed = 0;
+        // Timing Init
+        randomInterval = game.rnd.integerInRange(300,800);
+        timeElapsed = 0;
 
-    // Motion Init
-    movingLeft = false;
-    movingRight = false;
-    facingLeft = true;
+        // Motion Init
+        movingLeft = false;
+        movingRight = false;
+        facingLeft = true;
 
-    // UI Init
-    buttonState = 0;
-    score = 0;
-    scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
-    touchControls = false;
-}
-
-function update() {
-
-    score++;
-    scoreText.text = 'SCORE: ' + score;
-    game.physics.arcade.collide(bird, platforms);
-    bird.body.velocity.x = 0;
-    timeElapsed++;
-    moveButtons();
-    buttonPosition();
-    motion();
-    keyboardControls();
-}
+        // UI Init
+        buttonState = 0;
+        score = 0;
+        scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
+        touchControls = false;
+    },
+    update: function(){
+        score++;
+        scoreText.text = 'SCORE: ' + score;
+        game.physics.arcade.collide(bird, platforms);
+        bird.body.velocity.x = 0;
+        timeElapsed++;
+        moveButtons();
+        buttonPosition();
+        motion();
+        keyboardControls();
+    },
+};
 
 function moveButtons(){
     if(timeElapsed > randomInterval){
@@ -208,4 +187,3 @@ function jumpClick(){
         bird.body.velocity.y = -400;
     }
 }
-

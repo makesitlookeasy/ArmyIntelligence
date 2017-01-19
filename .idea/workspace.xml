@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/boot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/load.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/menu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/play.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/startup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArmyIntelligence/index.html" afterPath="$PROJECT_DIR$/ArmyIntelligence/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ArmyIntelligence/js/main.js" afterPath="$PROJECT_DIR$/ArmyIntelligence/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +27,53 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/main.js">
+      <file leaf-file-name="startup.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/startup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="197" column="1" lean-forward="true" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+            <state relative-caret-position="120">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#48#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="boot.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/boot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="load.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/load.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="play.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/play.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="53" column="8" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="53" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -36,13 +84,20 @@
                 <element signature="n#!!block;n#leftDown#0" expanded="false" />
                 <element signature="n#!!block;n#leftUp#0" expanded="false" />
                 <element signature="n#!!block;n#jumpClick#0" expanded="false" />
-                <element signature="e#5297#5341#0" expanded="false" />
+                <element signature="e#4831#4875#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -59,7 +114,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/ArmyIntelligence/js/startup.js" />
         <option value="$PROJECT_DIR$/ArmyIntelligence/js/main.js" />
+        <option value="$PROJECT_DIR$/ArmyIntelligence/js/boot.js" />
+        <option value="$PROJECT_DIR$/ArmyIntelligence/index.html" />
+        <option value="$PROJECT_DIR$/ArmyIntelligence/js/play.js" />
+        <option value="$PROJECT_DIR$/ArmyIntelligence/js/load.js" />
+        <option value="$PROJECT_DIR$/ArmyIntelligence/js/menu.js" />
       </list>
     </option>
   </component>
@@ -88,8 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,9 +204,68 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="true" />
+    <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -158,18 +278,18 @@
       <workItem from="1484079042190" duration="10858000" />
       <workItem from="1484165209661" duration="718000" />
       <workItem from="1484700888920" duration="10295000" />
-      <workItem from="1484771082632" duration="4686000" />
+      <workItem from="1484771082632" duration="7461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30275000" />
+    <option name="totallyTimeSpent" value="33050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28056425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28046876" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28552458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -212,14 +332,35 @@
             <element signature="n#!!block;n#leftDown#0" expanded="false" />
             <element signature="n#!!block;n#leftUp#0" expanded="false" />
             <element signature="n#!!block;n#jumpClick#0" expanded="false" />
-            <element signature="e#5297#5341#0" expanded="false" />
+            <element signature="e#5299#5343#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/phaser.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/phaser.map">
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1697">
+        <state relative-caret-position="-54127">
           <caret line="5" column="26092" lean-forward="false" selection-start-line="5" selection-start-column="26086" selection-end-line="5" selection-end-column="26092" />
           <folding />
         </state>
@@ -227,8 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="197" column="1" lean-forward="true" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+        <state relative-caret-position="458">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="209" selection-end-column="1" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -239,8 +380,69 @@
             <element signature="n#!!block;n#leftDown#0" expanded="false" />
             <element signature="n#!!block;n#leftUp#0" expanded="false" />
             <element signature="n#!!block;n#jumpClick#0" expanded="false" />
-            <element signature="e#5297#5341#0" expanded="false" />
+            <element signature="e#5299#5343#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/startup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/boot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="52" lean-forward="false" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/play.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="53" column="8" lean-forward="false" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="53" />
+          <folding>
+            <element signature="n#!!block;n#moveButtons#0" expanded="false" />
+            <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
+            <element signature="n#!!block;n#motion#0" expanded="false" />
+            <element signature="n#!!block;n#keyboardControls#0" expanded="false" />
+            <element signature="n#!!block;n#rightDown#0" expanded="false" />
+            <element signature="n#!!block;n#rightUp#0" expanded="false" />
+            <element signature="n#!!block;n#leftDown#0" expanded="false" />
+            <element signature="n#!!block;n#leftUp#0" expanded="false" />
+            <element signature="n#!!block;n#jumpClick#0" expanded="false" />
+            <element signature="e#4831#4875#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ArmyIntelligence/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
