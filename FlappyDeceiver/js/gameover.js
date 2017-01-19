@@ -1,0 +1,6 @@
+
+var gameoverState = {
+    create: function(){
+
+    }
+};
