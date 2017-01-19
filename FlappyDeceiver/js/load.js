@@ -13,6 +13,13 @@ var loadState = {
         game.load.image('startPressed', 'assets/sprites/StartButtonPressed.png');
         game.load.image('menuBackground', 'assets/sprites/MenuBackground.png');
         game.load.image('title', 'assets/sprites/FlappyDeceiver.png');
+        game.load.image('back', 'assets/sprites/BackButton.png');
+        game.load.image('backPressed', 'assets/sprites/BackButtonPressed.png');
+        game.load.image('KeyboardButton', 'assets/sprites/KeyboardButton.png');
+        game.load.image('KeyboardButtonPressed', 'assets/sprites/KeyboardButtonPressed.png');
+        game.load.image('checkmark', 'assets/sprites/checkmark.png');
+        game.load.image('xmark', 'assets/sprites/xmark.png');
+
 
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
 
