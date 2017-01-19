@@ -24,7 +24,6 @@ var facingLeft;
 // UI Vars
 var score;
 var scoreText;
-var touchControls;
 
 var playState = {
     create: function(){
@@ -77,7 +76,6 @@ var playState = {
         buttonState = 0;
         score = 0;
         scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
-        touchControls = false;
     },
     update: function(){
         score++;

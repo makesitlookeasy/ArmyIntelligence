@@ -7,7 +7,12 @@ var loadState = {
         game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
         game.load.image('arrow', 'assets/sprites/arrow.png');
         game.load.image('orb', 'assets/sprites/orb-green.png');
-        game.load.image('options', 'assets/sprites/optionsButton.png');
+        game.load.image('options', 'assets/sprites/OptionsButton.png');
+        game.load.image('optionsPressed', 'assets/sprites/OptionsButtonPressed.png');
+        game.load.image('start', 'assets/sprites/StartButton.png');
+        game.load.image('startPressed', 'assets/sprites/StartButtonPressed.png');
+        game.load.image('menuBackground', 'assets/sprites/MenuBackground.png');
+        game.load.image('title', 'assets/sprites/FlappyDeceiver.png');
 
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
 
