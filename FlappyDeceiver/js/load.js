@@ -5,6 +5,7 @@ var loadState = {
         game.load.image('platform', 'assets/sprites/platform.png');
         game.load.image('grassFloor', 'assets/sprites/grassFloor.png');
         game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
+        game.load.image('cloud1', 'assets/sprites/cloud1.png');
         game.load.image('arrow', 'assets/sprites/arrow.png');
         game.load.image('orb', 'assets/sprites/orb-green.png');
         game.load.image('options', 'assets/sprites/OptionsButton.png');
@@ -20,8 +21,8 @@ var loadState = {
         game.load.image('checkmark', 'assets/sprites/checkmark.png');
         game.load.image('xmark', 'assets/sprites/xmark.png');
 
-
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
+        game.load.spritesheet('rock', 'assets/sprites/rocksheet.png', 64, 64, 4);
 
         game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
     },

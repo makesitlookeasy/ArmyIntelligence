@@ -1,6 +1,7 @@
 // Physics Objects
 var bird;
 var platforms;
+var enemies;
 
 // Button Vars
 var cursors;
@@ -27,19 +28,15 @@ var scoreText;
 
 var playState = {
     create: function(){
-        // Player Sprite
-        bird = game.add.sprite(50, 200, 'bird');
-        bird.anchor.setTo(0.5, 0.5);
-        bird.animations.add('flap', [4,5,6,7,]);
-        bird.animations.play('flap', 10, true);
-        game.physics.arcade.enable(bird);
-        bird.body.collideWorldBounds = true;
-        bird.body.gravity.y = 500;
-
-        // Platforms
+        generatePlayer();
+        enemies = game.add.physicsGroup();
+        generateEnemy();
         platforms = game.add.physicsGroup();
         platform1 = platforms.create(0, 450, 'grassFloor');
-        platform2 = platforms.create(50, 300, 'grassPlatform');
+        platform2 = platforms.create(70, 300, 'cloud1');
+        platform2.scale.setTo(0.6, 0.5);
+        platform3 = platforms.create(400, 150, 'cloud1');
+        platform3.scale.setTo(0.6, 0.5);
         platforms.setAll('body.immovable', true);
 
         // Keyboard Input
@@ -81,6 +78,7 @@ var playState = {
         score++;
         scoreText.text = 'SCORE: ' + score;
         game.physics.arcade.collide(bird, platforms);
+        game.physics.arcade.collide(enemy, platforms);
         bird.body.velocity.x = 0;
         timeElapsed++;
         moveButtons();
@@ -184,4 +182,25 @@ function jumpClick(){
     if(bird.body.onFloor() || bird.body.touching.down) {
         bird.body.velocity.y = -400;
     }
+}
+
+function generatePlayer(){
+    bird = game.add.sprite(200, 400, 'bird');
+    bird.anchor.setTo(0.5, 0.5);
+    bird.animations.add('flap', [4,5,6,7,]);
+    bird.animations.play('flap', 10, true);
+    game.physics.arcade.enable(bird);
+    bird.body.collideWorldBounds = true;
+    bird.body.gravity.y = 500;
+    bird.scale.setTo(0.75);
+}
+
+function generateEnemy(){
+    enemy = enemies.create(100, 100, 'rock');
+    enemy.animations.add('yell');
+    enemy.animations.play('yell', 12, true);
+    game.physics.arcade.enable(enemy);
+    enemy.body.gravity.y = 500;
+    enemy.scale.setTo(1.2);
+    enemy.body.velocity.x = game.rnd.integerInRange(-100,100);
 }
