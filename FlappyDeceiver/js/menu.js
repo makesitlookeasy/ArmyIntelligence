@@ -3,7 +3,7 @@ var menuState = {
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         background = game.add.sprite(0, 0, 'menuBackground');
 
-        title = game.add.sprite(50,0,'title');
+        title = game.add.sprite(game.width/2 - game.cache.getImage('title').width/2, 50,'title');
 
         var startx = game.width/2 - game.cache.getImage('start').width/2;
         var starty = game.height/2;

@@ -9,13 +9,15 @@ var jumpButton;
 var leftButton;
 var rightButton;
 var position1 = 50;
-var position2 = 200;
-var position3 = 600;
+var position2 = 250;
+var position3 = 800;
 var buttonState;
 
 // Timing Vars
 var randomInterval;
 var timeElapsed;
+var enemyFlipInterval = 400;
+var enemyFlipTimeElapsed = 0;
 
 // Motions Vars
 var movingLeft;
@@ -28,6 +30,7 @@ var scoreText;
 
 var playState = {
     create: function(){
+        game.physics.setBoundsToWorld();
         generatePlayer();
         enemies = game.add.physicsGroup();
         generateEnemy();
@@ -39,19 +42,19 @@ var playState = {
 
         // Buttons
         // Right Button
-        rightButton = game.add.button(200,  game.world.height - 120, 'arrow', null, this);
+        rightButton = game.add.button(position2,  game.world.height - 120, 'arrow', null, this);
         rightButton.scale.setTo(2,2);
         rightButton.onInputDown.add(rightDown, this);
         rightButton.onInputUp.add(rightUp, this);
         // Left Button
-        leftButton = game.add.button(50 ,  game.world.height - 120, 'arrow', null, this)
+        leftButton = game.add.button(position1 ,  game.world.height - 120, 'arrow', null, this)
         leftButton.anchor.setTo(1,1);
         leftButton.angle = 180;
         leftButton.scale.setTo(2,2);
         leftButton.onInputDown.add(leftDown, this);
         leftButton.onInputUp.add(leftUp, this);
         // Jump Button
-        jumpButton = game.add.button(600, game.world.height - 120, 'orb', jumpClick, this);
+        jumpButton = game.add.button(position3, game.world.height - 120, 'orb', jumpClick, this);
         jumpButton.scale.setTo(4,4);
 
         // Timing Init
@@ -75,10 +78,12 @@ var playState = {
         game.physics.arcade.collide(enemy, platforms);
         bird.body.velocity.x = 0;
         timeElapsed++;
+        enemyFlipTimeElapsed++;
         moveButtons();
         buttonPosition();
         motion();
         keyboardControls();
+        flipEnemies();
     },
 };
 
@@ -197,11 +202,34 @@ function generatePlayer(){
     bird.scale.setTo(0.75);
 }
 function generateEnemy(){
-    enemy = enemies.create(100, 100, 'rock');
+    enemySpeed = 50;
+    enemy = enemies.create(100, 0, 'rock');
     enemy.animations.add('yell');
     enemy.animations.play('yell', 12, true);
+    enemy.checkWorldBounds = true;
+    enemy.events.onOutOfBounds.add(enemyOut, this);
     game.physics.arcade.enable(enemy);
     enemy.body.gravity.y = 500;
     enemy.scale.setTo(1.2);
-    enemy.body.velocity.x = game.rnd.integerInRange(-100,100);
+    r = game.rnd.between(0,1);
+    if(r){
+        enemy.body.velocity.x = enemySpeed;
+    }
+    else{
+        enemy.body.velocity.x = -enemySpeed;
+    }
+}
+
+function flipEnemies(){
+    if(enemyFlipTimeElapsed > enemyFlipInterval){
+        enemies.forEach(function(enemy){
+           enemy.body.velocity.x *= -1;
+        })
+        enemyFlipTimeElapsed = 0;
+    }
+}
+
+function enemyOut(enemy){
+    enemy.kill();
+    generateEnemy();
 }
