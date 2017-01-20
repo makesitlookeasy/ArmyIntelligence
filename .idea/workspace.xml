@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" />
-    </list>
+    <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/.tmp/" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/temp/" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/tmp/" />
@@ -45,8 +43,8 @@
       <file leaf-file-name="load.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state relative-caret-position="210">
+              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -339,12 +337,12 @@
       <workItem from="1484700888920" duration="10295000" />
       <workItem from="1484771082632" duration="16368000" />
       <workItem from="1484822956663" duration="753000" />
-      <workItem from="1484855138846" duration="5470000" />
+      <workItem from="1484855138846" duration="5589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48180000" />
+    <option name="totallyTimeSpent" value="48299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-37" y="23" width="1067" height="752" extended-state="0" />
@@ -616,8 +614,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state relative-caret-position="210">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
           <folding />
         </state>
       </provider>
