@@ -179,7 +179,7 @@ function jumpClick(){
 }
 function generatePlatforms(){
     platforms = game.add.physicsGroup();
-    platform1 = platforms.create(0, 450, 'platform');
+    platform1 = platforms.create(0, 450, 'grassFloor');
     platform2 = platforms.create(70, 300, 'cloud1');
     platform2.scale.setTo(0.6, 0.5);
     platform3 = platforms.create(400, 150, 'cloud1');

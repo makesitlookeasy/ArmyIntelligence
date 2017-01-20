@@ -47,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -86,8 +86,8 @@
       <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="181" column="50" lean-forward="false" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="50" />
+            <state relative-caret-position="445">
+              <caret line="181" column="52" lean-forward="false" selection-start-line="181" selection-start-column="52" selection-end-line="181" selection-end-column="52" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -247,6 +247,28 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sprites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlappyDeceiver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlappyDeceiver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FlappyDeceiver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -339,12 +361,12 @@
       <workItem from="1484700888920" duration="10295000" />
       <workItem from="1484771082632" duration="16368000" />
       <workItem from="1484822956663" duration="753000" />
-      <workItem from="1484855138846" duration="6209000" />
+      <workItem from="1484855138846" duration="6345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48919000" />
+    <option name="totallyTimeSpent" value="49055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-37" y="23" width="1067" height="752" extended-state="0" />
@@ -594,15 +616,15 @@
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="181" column="50" lean-forward="false" selection-start-line="181" selection-start-column="50" selection-end-line="181" selection-end-column="50" />
+        <state relative-caret-position="445">
+          <caret line="181" column="52" lean-forward="false" selection-start-line="181" selection-start-column="52" selection-end-line="181" selection-end-column="52" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
