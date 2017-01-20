@@ -76,6 +76,8 @@ var playState = {
         scoreText.text = 'SCORE: ' + score;
         game.physics.arcade.collide(bird, platforms);
         game.physics.arcade.collide(enemy, platforms);
+        game.physics.arcade.collide(coin, platforms);
+        //game.physics.arcade.collide(coin, bird, Collect);
         bird.body.velocity.x = 0;
         timeElapsed++;
         moveButtons();
@@ -295,4 +297,5 @@ function generateCoins(){
     coin.animations.play('spin',12,true);
     game.physics.arcade.enable(coin);
     coin.body.gravity.y = 500;
+    coin.body.collideWorldBounds = true;
 }
