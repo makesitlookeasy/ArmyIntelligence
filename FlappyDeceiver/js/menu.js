@@ -1,5 +1,6 @@
 var menuState = {
     create: function(){
+        game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         background = game.add.sprite(0, 0, 'menuBackground');
 
         title = game.add.sprite(50,0,'title');
@@ -11,7 +12,7 @@ var menuState = {
         startButton.onInputUp.add(startRelease, this);
 
         var optionsx = game.width/2 - game.cache.getImage('options').width/2;
-        var optionsy = game.height/2 + game.cache.getImage('start').height;
+        var optionsy = game.height/2 + game.cache.getImage('options').height;
         optionsButton = game.add.button(optionsx,optionsy,'options', null, this);
         optionsButton.onInputDown.add(optionsClick, this);
         optionsButton.onInputUp.add(optionsRelease, this);

@@ -186,7 +186,6 @@ function generatePlatforms(){
     platform3.scale.setTo(0.6, 0.5);
     platforms.setAll('body.immovable', true);
 }
-
 function generatePlayer(){
     bird = game.add.sprite(200, 400, 'bird');
     bird.anchor.setTo(0.5, 0.5);
