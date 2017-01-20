@@ -264,7 +264,6 @@ function generatePlatforms(){
 
    platforms.setAll('body.immovable', true);
 }
-
 function generatePlayer(){
     bird = game.add.sprite(200, 400, 'bird');
     bird.width = 0.75 * bird.width;
