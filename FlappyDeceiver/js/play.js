@@ -2,6 +2,7 @@
 var bird;
 var platforms;
 var enemies;
+var coins;
 
 // Button Vars
 var cursors;
@@ -35,6 +36,8 @@ var playState = {
         enemies = game.add.physicsGroup();
         generateEnemy();
         generatePlatforms();
+        coins = game.add.physicsGroup();
+        generateCoins();
 
         // Keyboard Input
         cursors = game.input.keyboard.createCursorKeys();
@@ -184,15 +187,95 @@ function jumpClick(){
 }
 function generatePlatforms(){
     platforms = game.add.physicsGroup();
-    platform1 = platforms.create(0, 450, 'grassFloor');
-    platform2 = platforms.create(70, 300, 'cloud1');
-    platform2.scale.setTo(0.6, 0.5);
-    platform3 = platforms.create(400, 150, 'cloud1');
-    platform3.scale.setTo(0.6, 0.5);
-    platforms.setAll('body.immovable', true);
+    //length
+   //200
+   var l1 = game.world.width / 6;
+   //500
+   var l2 = game.world.width / 2.4;
+   //300
+   var l3 = game.world.width / 4;
+   //1250
+   var l4 = game.world.width;
+   //16
+   var l5 = game.world.width / 75;
+
+
+   //y coordinates
+   //100
+   var h1 = game.world.height / 4.4;
+   //250
+   var h2 = game.world.height / 2.2;
+   //345ish
+   var h3 = game.world.height / 1.88;
+   //400
+   var h4 = game.world.height / 1.7;
+   //500
+   var h5 = game.world.height / 1.3;
+
+   //x coordinates
+   //900
+   var w1 = ( game.world.width / 4 ) * 3;
+   //500
+   var w2 = game.world.width / 2.4;
+   //100
+   var w3 = game.world.width / 12;
+   //850
+   var w4 = game.world.width / 1.4;
+   //800
+   var w5 = (game.world.width / 3) * 2;
+   //25
+   var w6 = game.world.width / 48;
+
+   //platform height
+   //16
+   var ph1 = game.world.height / 40.625;
+   //50
+   var ph2 = game.world.height / 13;
+
+   //TOP 3 PLATFORMS
+   var pSprite = game.add.sprite(w1, h1, 'cloud1');
+   pSprite.width = l1; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   pSprite = game.add.sprite(w2, h1, 'cloud1');
+   pSprite.width = l1; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   pSprite = game.add.sprite(w3, h1, 'cloud1');
+   pSprite.width = l1; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   //platform on right below top 3
+   pSprite = game.add.sprite(game.world.width - l1, h2, 'cloud1');
+   pSprite.width = l1; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   //platform on left below
+   pSprite = game.add.sprite(0, h2, 'cloud1');
+   pSprite.width = l1; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   //platform on right above ground
+   //pSprite = game.add.sprite(w5, h4, 'platform');
+   //pSprite.width = l2; pSprite.height = ph1;
+   //platforms.add(pSprite);
+
+   //middle bottom platform
+   pSprite = game.add.sprite((game.world.width / 2) - (l2 / 2), h4, 'cloud1');
+   pSprite.width = l2; pSprite.height = ph1;
+   platforms.add(pSprite);
+
+   //ground
+   pSprite = game.add.sprite(0, h5, 'grassFloor');
+   pSprite.width = l4; pSprite.height = ph2;
+   platforms.add(pSprite);
+
+   platforms.setAll('body.immovable', true);
 }
 function generatePlayer(){
     bird = game.add.sprite(200, 400, 'bird');
+    bird.width = 0.75 * bird.width;
+    bird.height = 0.75 * bird.height;
     bird.anchor.setTo(0.5, 0.5);
     bird.animations.add('flap', [4,5,6,7,]);
     bird.animations.play('flap', 10, true);
@@ -232,4 +315,12 @@ function flipEnemies(){
 function enemyOut(enemy){
     enemy.kill();
     generateEnemy();
+}
+
+function generateCoins(){
+    coin = coins.create(100, 100, 'coin');
+    coin.animations.add('spin');
+    coin.animations.play('spin',12,true);
+    game.physics.arcade.enable(coin);
+    coin.body.gravity.y = 500;
 }

@@ -26,6 +26,7 @@ var loadState = {
 
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
         game.load.spritesheet('rock', 'assets/sprites/rocksheet.png', 64, 64, 4);
+        game.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32, 6);
 
         game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
     },
