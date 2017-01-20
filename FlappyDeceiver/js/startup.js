@@ -1,7 +1,7 @@
 /**
  * Created by kennyrosenberg on 1/19/17.
  */
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'GAME TITLE HERE');
+var game = new Phaser.Game(1000, 600, Phaser.AUTO, 'GAME TITLE HERE');
 
 
 game.state.add('boot', bootState);
