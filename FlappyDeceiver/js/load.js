@@ -3,7 +3,7 @@ var loadState = {
         game.stage.backgroundColor = '#85b5e1';
 
         game.load.image('platform', 'assets/sprites/platform.png');
-        game.load.image('grassFloor', 'assets/sprites/grassFloor.png');
+        game.load.image('grassFloor', 'assets/sprites/GrassFloor.png');
         game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
         game.load.image('cloud1', 'assets/sprites/cloud1.png');
         game.load.image('arrow', 'assets/sprites/arrow.png');
