@@ -2,6 +2,7 @@
 var bird;
 var platforms;
 var enemies;
+var coins;
 
 // Button Vars
 var cursors;
@@ -32,6 +33,8 @@ var playState = {
         enemies = game.add.physicsGroup();
         generateEnemy();
         generatePlatforms();
+        coins = game.add.physicsGroup();
+        generateCoins();
 
         // Keyboard Input
         cursors = game.input.keyboard.createCursorKeys();
@@ -284,4 +287,12 @@ function generateEnemy(){
     enemy.body.gravity.y = 500;
     enemy.scale.setTo(1.2);
     enemy.body.velocity.x = game.rnd.integerInRange(-100,100);
+}
+
+function generateCoins(){
+    coin = coins.create(100, 100, 'coin');
+    coin.animations.add('spin');
+    coin.animations.play('spin',12,true);
+    game.physics.arcade.enable(coin);
+    coin.body.gravity.y = 500;
 }
