@@ -2,6 +2,7 @@
 var bird;
 var platforms;
 var enemies;
+var enemySpeed = 50;
 var coins;
 
 // Button Vars
@@ -38,6 +39,10 @@ var playState = {
         generatePlatforms();
         coins = game.add.physicsGroup();
         generateCoins();
+
+        ground = game.add.sprite(0, 450, 'grassFloor');
+        game.physics.arcade.enable(ground);
+        ground.body.immovable = true;
 
         // Keyboard Input
         cursors = game.input.keyboard.createCursorKeys();
@@ -78,7 +83,9 @@ var playState = {
         score++;
         scoreText.text = 'SCORE: ' + score;
         game.physics.arcade.collide(bird, platforms);
-        game.physics.arcade.collide(enemy, platforms);
+        game.physics.arcade.collide(enemies, platforms);
+        game.physics.arcade.collide(bird, ground);
+        game.physics.arcade.collide(enemies, ground, enemyTouchGround);
         bird.body.velocity.x = 0;
         timeElapsed++;
         enemyFlipTimeElapsed++;
@@ -89,7 +96,6 @@ var playState = {
         flipEnemies();
     },
 };
-
 function moveButtons(){
     if(timeElapsed > randomInterval){
         randomInterval = game.rnd.integerInRange(300,800);
@@ -265,11 +271,6 @@ function generatePlatforms(){
    pSprite.width = l2; pSprite.height = ph1;
    platforms.add(pSprite);
 
-   //ground
-   pSprite = game.add.sprite(0, h5, 'grassFloor');
-   pSprite.width = l4; pSprite.height = ph2;
-   platforms.add(pSprite);
-
    platforms.setAll('body.immovable', true);
 }
 function generatePlayer(){
@@ -285,15 +286,17 @@ function generatePlayer(){
     bird.scale.setTo(0.75);
 }
 function generateEnemy(){
-    enemySpeed = 50;
-    enemy = enemies.create(100, 0, 'rock');
-    enemy.animations.add('yell');
-    enemy.animations.play('yell', 12, true);
-    enemy.checkWorldBounds = true;
-    enemy.events.onOutOfBounds.add(enemyOut, this);
+    dropPoint = game.rnd.between(100,900);
+    enemy = enemies.create(dropPoint, 0, 'rock');
+    enemy.scale.setTo(1.2);
     game.physics.arcade.enable(enemy);
     enemy.body.gravity.y = 500;
-    enemy.scale.setTo(1.2);
+    enemy.animations.add('yell');
+    enemy.animations.play('yell', 12, true);
+
+    enemy.checkWorldBounds = true;
+    enemy.events.onOutOfBounds.add(enemyOut, this);
+
     r = game.rnd.between(0,1);
     if(r){
         enemy.body.velocity.x = enemySpeed;
@@ -301,22 +304,27 @@ function generateEnemy(){
     else{
         enemy.body.velocity.x = -enemySpeed;
     }
-}
 
+    enemy.hasTouchedGround = false;
+}
 function flipEnemies(){
     if(enemyFlipTimeElapsed > enemyFlipInterval){
         enemies.forEach(function(enemy){
-           enemy.body.velocity.x *= -1;
+            if(!enemy.hasTouchedGround){
+                enemy.body.velocity.x *= -1;
+            }
         })
         enemyFlipTimeElapsed = 0;
+        enemyFlipInterval = game.rnd.between(200, 800);
     }
 }
-
+function enemyTouchGround(enemy, ground){
+    enemy.hasTouchedGround = true;
+}
 function enemyOut(enemy){
     enemy.kill();
     generateEnemy();
 }
-
 function generateCoins(){
     coin = coins.create(100, 100, 'coin');
     coin.animations.add('spin');
