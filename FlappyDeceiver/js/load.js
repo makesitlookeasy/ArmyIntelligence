@@ -24,7 +24,8 @@ var loadState = {
         game.load.image('checkmark', 'assets/sprites/checkmark.png');
         game.load.image('xmark', 'assets/sprites/xmark.png');
 
-        game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 8);
+        game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 32);
+        game.load.spritesheet('bird2', 'assets/sprites/birds2.png', 64, 64, 32);
         game.load.spritesheet('rock', 'assets/sprites/rocksheet.png', 64, 64, 4);
         game.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32, 6);
 
