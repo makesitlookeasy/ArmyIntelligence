@@ -16,7 +16,7 @@ var optionsState = {
         keyboardButton.onInputDown.add(keyboardClick, this);
         keyboardButton.onInputUp.add(keyboardRelease, this);
 
-        checkmark = game.add.sprite(500, 80, 'checkmark');
+        checkmark = game.add.sprite(600, 80, 'checkmark');
         checkmark.scale.set(0.5);
     }
 };

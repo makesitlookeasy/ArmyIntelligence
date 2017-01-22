@@ -12,77 +12,46 @@ var rightButton;
 var position1 = 50;
 var position2 = 250;
 var position3 = 800;
-var buttonState;
+var buttonState = 0;
 
 // Timing Vars
 var randomInterval;
-var timeElapsed;
+var timeElapsed = 0;
 
 // Motions Vars
-var movingLeft;
-var movingRight;
-var facingLeft;
+var movingLeft = false;
+var movingRight = false;
+var facingLeft = true;
 
 // UI Vars
-var score;
+var score = 0;
 var scoreText;
 
 var playState = {
     create: function(){
         game.physics.setBoundsToWorld();
-        generatePlayer();
         enemies = game.add.physicsGroup();
+        coins = game.add.physicsGroup();
         generateEnemy();
         generatePlatforms();
-        coins = game.add.physicsGroup();
+        generatePlayer();
         generateCoins();
-
-        ground = game.add.sprite(0, 450, 'grassFloor');
-        game.physics.arcade.enable(ground);
-        ground.body.immovable = true;
-
-        // Keyboard Input
-        cursors = game.input.keyboard.createCursorKeys();
-        jumpKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-
-        // Buttons
-        // Right Button
-        rightButton = game.add.button(position2,  game.world.height - 120, 'arrow', null, this);
-        rightButton.scale.setTo(2,2);
-        rightButton.onInputDown.add(rightDown, this);
-        rightButton.onInputUp.add(rightUp, this);
-        // Left Button
-        leftButton = game.add.button(position1 ,  game.world.height - 120, 'arrow', null, this)
-        leftButton.anchor.setTo(1,1);
-        leftButton.angle = 180;
-        leftButton.scale.setTo(2,2);
-        leftButton.onInputDown.add(leftDown, this);
-        leftButton.onInputUp.add(leftUp, this);
-        // Jump Button
-        jumpButton = game.add.button(position3, game.world.height - 120, 'orb', jumpClick, this);
-        jumpButton.scale.setTo(4,4);
-
-        // Timing Init
+        generateButtons();
         randomInterval = game.rnd.integerInRange(300,800);
-        timeElapsed = 0;
-
-        // Motion Init
-        movingLeft = false;
-        movingRight = false;
-        facingLeft = true;
-
-        // UI Init
-        buttonState = 0;
-        score = 0;
         scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
     },
     update: function(){
         score++;
         scoreText.text = 'SCORE: ' + score;
+        if(score % 500 == 0){
+            generateEnemy();
+        }
         game.physics.arcade.collide(bird, platforms);
+        game.physics.arcade.collide(bird, enemies, gameOver);
         game.physics.arcade.collide(enemies, platforms);
-        game.physics.arcade.collide(bird, ground);
-        game.physics.arcade.collide(enemies, ground);
+        game.physics.arcade.collide(enemies, enemies);
+        game.physics.arcade.collide(coins, platforms);
+        game.physics.arcade.collide(coins, bird, collectCoin);
         bird.body.velocity.x = 0;
         timeElapsed++;
         moveButtons();
@@ -188,6 +157,28 @@ function jumpClick(){
         bird.body.velocity.y = -400;
     }
 }
+function generateButtons(){
+    // Keyboard Input
+    cursors = game.input.keyboard.createCursorKeys();
+    jumpKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+    // Buttons
+    // Right Button
+    rightButton = game.add.button(position2,  game.world.height - 120, 'arrow', null, this);
+    rightButton.scale.setTo(2,2);
+    rightButton.onInputDown.add(rightDown, this);
+    rightButton.onInputUp.add(rightUp, this);
+    // Left Button
+    leftButton = game.add.button(position1 ,  game.world.height - 120, 'arrow', null, this)
+    leftButton.anchor.setTo(1,1);
+    leftButton.angle = 180;
+    leftButton.scale.setTo(2,2);
+    leftButton.onInputDown.add(leftDown, this);
+    leftButton.onInputUp.add(leftUp, this);
+    // Jump Button
+    jumpButton = game.add.button(position3, game.world.height - 120, 'orb', jumpClick, this);
+    jumpButton.scale.setTo(4,4);
+}
 function generatePlatforms(){
     platforms = game.add.physicsGroup();
     //length
@@ -268,6 +259,9 @@ function generatePlatforms(){
    pSprite.width = l2; pSprite.height = ph1;
    platforms.add(pSprite);
 
+   ground = game.add.sprite(0, 450, 'grassFloor');
+   platforms.add(ground);
+
    platforms.setAll('body.immovable', true);
 }
 function generateCoins(){
@@ -315,6 +309,13 @@ function flipEnemies(){
             }
         }
     })
+}
+function gameOver(){
+    game.state.start('gameover');
+}
+function collectCoin(bird, coin){
+    coin.kill();
+    score += 500;
 }
 
 
