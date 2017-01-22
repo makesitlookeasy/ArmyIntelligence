@@ -80,7 +80,7 @@ var playState = {
         game.physics.arcade.collide(bird, platforms);
         game.physics.arcade.collide(enemy, platforms);
         game.physics.arcade.collide(coin, platforms);
-        //game.physics.arcade.collide(coin, bird, Collect);
+        game.physics.arcade.collide(coin, bird, CollectCoin);
         bird.body.velocity.x = 0;
         timeElapsed++;
         enemyFlipTimeElapsed++;
@@ -305,6 +305,20 @@ function generateEnemy(){
     }
 }
 
+function generateCoins(){
+    coin = coins.create(100, 100, 'coin');
+    coin2 = coins.create(100, 150, 'coin');
+
+    coins.setAll('animations.add','spin');
+    coins.setAll('animations.play',('spin',12,true));
+    coins.setAll('physics.arcade.enable',coin);
+    coins.setAll('body.gravity.y', 500);
+    coins.setAll('body.collideWorldBounds', true);
+    //coin.animations.add('spin');
+    //coin.animations.play('spin',12,true);
+    //game.physics.arcade.enable(coin);
+}
+
 function flipEnemies(){
     if(enemyFlipTimeElapsed > enemyFlipInterval){
         enemies.forEach(function(enemy){
@@ -314,16 +328,12 @@ function flipEnemies(){
     }
 }
 
+function CollectCoin(coin,player){
+  coin.kill();
+  score += 1000;
+}
+
 function enemyOut(enemy){
     enemy.kill();
     generateEnemy();
-}
-
-function generateCoins(){
-    coin = coins.create(100, 100, 'coin');
-    coin.animations.add('spin');
-    coin.animations.play('spin',12,true);
-    game.physics.arcade.enable(coin);
-    coin.body.gravity.y = 500;
-    coin.body.collideWorldBounds = true;
 }
