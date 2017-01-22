@@ -179,7 +179,8 @@ function generateButtons(){
     leftButton.onInputDown.add(leftDown, this);
     leftButton.onInputUp.add(leftUp, this);
     // Jump Button
-    jumpButton = game.add.button(position3, game.world.height - 120, 'orb', jumpClick, this);
+    jumpButton = game.add.button(position3, game.world.height - 120, 'orb', null, this);
+    jumpButton.onInputDown.add(jumpClick, this);
     jumpButton.scale.setTo(4,4);
 }
 function generatePlatforms(){

@@ -1,0 +1,11 @@
+keytool error: java.io.IOException: Is a directory
+java.io.IOException: Is a directory
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at sun.security.util.Password.readPassword(Password.java:82)
+	at sun.security.util.Password.readPassword(Password.java:40)
+	at sun.security.tools.keytool.Main.doCommands(Main.java:841)
+	at sun.security.tools.keytool.Main.run(Main.java:343)
+	at sun.security.tools.keytool.Main.main(Main.java:336)
