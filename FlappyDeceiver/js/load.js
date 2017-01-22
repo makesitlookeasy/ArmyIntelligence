@@ -14,6 +14,7 @@ var loadState = {
         game.load.image('menuBackground', 'assets/sprites/MenuBackground.png');
         game.load.image('gameOverBackground', 'assets/sprites/GameOverBackground.png');
         game.load.image('title', 'assets/sprites/FlappyDeceiver.png');
+        game.load.image('gameOver', 'assets/sprites/GameOver.png');
         game.load.image('back', 'assets/sprites/BackButton.png');
         game.load.image('backPressed', 'assets/sprites/BackButtonPressed.png');
         game.load.image('KeyboardButton', 'assets/sprites/KeyboardButton.png');

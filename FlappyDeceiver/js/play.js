@@ -21,7 +21,7 @@ var timeElapsed = 0;
 // Motions Vars
 var movingLeft = false;
 var movingRight = false;
-var facingLeft = true;
+var facingLeft;
 
 // UI Vars
 var score;
@@ -38,6 +38,7 @@ var playState = {
         generateCoins();
         generateButtons();
         score = 0;
+        facingLeft = true;
         randomInterval = game.rnd.integerInRange(300,800);
         scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
     },
