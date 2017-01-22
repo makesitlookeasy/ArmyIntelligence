@@ -24,7 +24,7 @@ var movingRight = false;
 var facingLeft = true;
 
 // UI Vars
-var score = 0;
+var score;
 var scoreText;
 
 var playState = {
@@ -37,6 +37,7 @@ var playState = {
         generatePlayer();
         generateCoins();
         generateButtons();
+        score = 0;
         randomInterval = game.rnd.integerInRange(300,800);
         scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
     },
@@ -59,6 +60,7 @@ var playState = {
         motion();
         keyboardControls();
         flipEnemies();
+        enemyFadeIn();
     },
 };
 
@@ -265,7 +267,8 @@ function generatePlatforms(){
    platforms.setAll('body.immovable', true);
 }
 function generateCoins(){
-    coin = coins.create(100, 100, 'coin');
+    dropPoint = game.rnd.between(100,900);
+    coin = coins.create(dropPoint, -50, 'coin');
     coin.animations.add('spin');
     coin.animations.play('spin',12,true);
     game.physics.arcade.enable(coin);
@@ -283,16 +286,22 @@ function generatePlayer(){
 }
 function generateEnemy(){
     dropPoint = game.rnd.between(100,900);
-    enemy = enemies.create(dropPoint, 300, 'bird2');
+    enemy = enemies.create(dropPoint, 0, 'bird2');
     enemy.animations.add('flap', [24,25,26,27]);
     enemy.animations.play('flap', 10, true);
     enemy.facingLeft = true;
     enemy.anchor.setTo(0.5, 0.5);
-    game.physics.arcade.enable(enemy);
 
+    game.physics.arcade.enable(enemy);
     enemy.body.collideWorldBounds = true;
     enemy.body.bounce.setTo(1,1);
-    enemy.body.velocity.setTo(200,200);
+    velx = game.rnd.between(100,200);
+    vely = game.rnd.between(100,200);
+    enemy.body.velocity.setTo(velx,vely);
+
+    enemy.collisionActive = false;
+    enemy.alpha = 0;
+
 }
 function flipEnemies(){
     enemies.forEach(function(enemy){
@@ -310,16 +319,23 @@ function flipEnemies(){
         }
     })
 }
-function gameOver(){
-    game.state.start('gameover');
+function gameOver(bird, enemy){
+    if(enemy.collisionActive){
+        game.state.start('gameover');
+    }
 }
 function collectCoin(bird, coin){
     coin.kill();
     score += 500;
+    generateCoins();
 }
-
-// Coin generation scheme
-// Gameover screen buttons
-// AI spawning scheme
-
-
+function enemyFadeIn(){
+    enemies.forEach(function(enemy){
+        if(enemy.alpha < 1){
+            enemy.alpha += 0.01;
+        }
+        if(enemy.alpha >= 1){
+            enemy.collisionActive = true;
+        }
+    })
+}

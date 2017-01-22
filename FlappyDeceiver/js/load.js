@@ -4,7 +4,6 @@ var loadState = {
 
         game.load.image('platform', 'assets/sprites/platform.png');
         game.load.image('grassFloor', 'assets/sprites/GrassFloor.png');
-        game.load.image('grassPlatform', 'assets/sprites/grassPlatform.png');
         game.load.image('cloud1', 'assets/sprites/cloud1.png');
         game.load.image('arrow', 'assets/sprites/arrow.png');
         game.load.image('orb', 'assets/sprites/orb-green.png');
@@ -26,7 +25,6 @@ var loadState = {
 
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 32);
         game.load.spritesheet('bird2', 'assets/sprites/birds2.png', 64, 64, 32);
-        game.load.spritesheet('rock', 'assets/sprites/rocksheet.png', 64, 64, 4);
         game.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32, 6);
 
         game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
@@ -34,6 +32,5 @@ var loadState = {
 
     create: function(){
         game.state.start('menu');
-        //game.state.start('gameover');
     },
 };
