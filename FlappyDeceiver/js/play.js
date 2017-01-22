@@ -318,4 +318,8 @@ function collectCoin(bird, coin){
     score += 500;
 }
 
+// Coin generation scheme
+// Gameover screen buttons
+// AI spawning scheme
+
 
