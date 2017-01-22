@@ -17,8 +17,6 @@ var buttonState;
 // Timing Vars
 var randomInterval;
 var timeElapsed;
-var enemyFlipInterval = 400;
-var enemyFlipTimeElapsed = 0;
 
 // Motions Vars
 var movingLeft;
@@ -38,6 +36,10 @@ var playState = {
         generatePlatforms();
         coins = game.add.physicsGroup();
         generateCoins();
+
+        ground = game.add.sprite(0, 450, 'grassFloor');
+        game.physics.arcade.enable(ground);
+        ground.body.immovable = true;
 
         // Keyboard Input
         cursors = game.input.keyboard.createCursorKeys();
@@ -78,12 +80,17 @@ var playState = {
         score++;
         scoreText.text = 'SCORE: ' + score;
         game.physics.arcade.collide(bird, platforms);
+<<<<<<< HEAD
         game.physics.arcade.collide(enemy, platforms);
         game.physics.arcade.collide(coin, platforms);
         game.physics.arcade.collide(coin, bird, CollectCoin);
+=======
+        game.physics.arcade.collide(enemies, platforms);
+        game.physics.arcade.collide(bird, ground);
+        game.physics.arcade.collide(enemies, ground);
+>>>>>>> 99fda67523a5d1b95f6811621b0d7230a0f7945b
         bird.body.velocity.x = 0;
         timeElapsed++;
-        enemyFlipTimeElapsed++;
         moveButtons();
         buttonPosition();
         motion();
@@ -267,19 +274,19 @@ function generatePlatforms(){
    pSprite.width = l2; pSprite.height = ph1;
    platforms.add(pSprite);
 
-   //ground
-   pSprite = game.add.sprite(0, h5, 'grassFloor');
-   pSprite.width = l4; pSprite.height = ph2;
-   platforms.add(pSprite);
-
    platforms.setAll('body.immovable', true);
+}
+function generateCoins(){
+    coin = coins.create(100, 100, 'coin');
+    coin.animations.add('spin');
+    coin.animations.play('spin',12,true);
+    game.physics.arcade.enable(coin);
+    coin.body.gravity.y = 500;
 }
 function generatePlayer(){
     bird = game.add.sprite(200, 400, 'bird');
-    bird.width = 0.75 * bird.width;
-    bird.height = 0.75 * bird.height;
     bird.anchor.setTo(0.5, 0.5);
-    bird.animations.add('flap', [4,5,6,7,]);
+    bird.animations.add('flap', [4,5,6,7]);
     bird.animations.play('flap', 10, true);
     game.physics.arcade.enable(bird);
     bird.body.collideWorldBounds = true;
@@ -287,22 +294,16 @@ function generatePlayer(){
     bird.scale.setTo(0.75);
 }
 function generateEnemy(){
-    enemySpeed = 50;
-    enemy = enemies.create(100, 0, 'rock');
-    enemy.animations.add('yell');
-    enemy.animations.play('yell', 12, true);
-    enemy.checkWorldBounds = true;
-    enemy.events.onOutOfBounds.add(enemyOut, this);
+    dropPoint = game.rnd.between(100,900);
+    enemy = enemies.create(dropPoint, 300, 'bird2');
+    enemy.animations.add('flap', [24,25,26,27]);
+    enemy.animations.play('flap', 10, true);
+    enemy.facingLeft = true;
+    enemy.anchor.setTo(0.5, 0.5);
     game.physics.arcade.enable(enemy);
-    enemy.body.gravity.y = 500;
-    enemy.scale.setTo(1.2);
-    r = game.rnd.between(0,1);
-    if(r){
-        enemy.body.velocity.x = enemySpeed;
-    }
-    else{
-        enemy.body.velocity.x = -enemySpeed;
-    }
+    enemy.body.collideWorldBounds = true;
+    enemy.body.bounce.setTo(1,1);
+    enemy.body.velocity.setTo(200,200);
 }
 
 function generateCoins(){
@@ -320,12 +321,20 @@ function generateCoins(){
 }
 
 function flipEnemies(){
-    if(enemyFlipTimeElapsed > enemyFlipInterval){
-        enemies.forEach(function(enemy){
-           enemy.body.velocity.x *= -1;
-        })
-        enemyFlipTimeElapsed = 0;
-    }
+    enemies.forEach(function(enemy){
+        if(enemy.facingLeft){
+            if(enemy.body.velocity.x > 0){
+                enemy.scale.x *= -1;
+                enemy.facingLeft = false;
+            }
+        }
+        else{
+            if(enemy.body.velocity.x < 0){
+                enemy.scale.x *= -1;
+                enemy.facingLeft = true;
+            }
+        }
+    })
 }
 
 function CollectCoin(coin,player){
