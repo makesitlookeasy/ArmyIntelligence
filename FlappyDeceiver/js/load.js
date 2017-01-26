@@ -2,9 +2,10 @@ var loadState = {
     preload: function(){
         game.stage.backgroundColor = '#85b5e1';
 
-        game.load.image('platform', 'assets/sprites/platform.png');
+        //game.load.image('platform', 'assets/sprites/platform.png');
         game.load.image('grassFloor', 'assets/sprites/GrassFloor.png');
         game.load.image('cloud1', 'assets/sprites/cloud1.png');
+        game.load.image('cloud2', 'assets/sprites/cloud2.png');
         game.load.image('arrow', 'assets/sprites/arrow.png');
         game.load.image('orb', 'assets/sprites/orb-green.png');
         game.load.image('options', 'assets/sprites/OptionsButton.png');

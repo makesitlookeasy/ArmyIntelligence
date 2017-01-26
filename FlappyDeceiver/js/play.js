@@ -62,6 +62,8 @@ var playState = {
         keyboardControls();
         flipEnemies();
         enemyFadeIn();
+        slideCloud(cloud4);
+        slideCloud(cloud5);
     },
 };
 
@@ -185,88 +187,31 @@ function generateButtons(){
 }
 function generatePlatforms(){
     platforms = game.add.physicsGroup();
-    //length
-   //200
-   var l1 = game.world.width / 6;
-   //500
-   var l2 = game.world.width / 2.4;
-   //300
-   var l3 = game.world.width / 4;
-   //1250
-   var l4 = game.world.width;
-   //16
-   var l5 = game.world.width / 75;
 
+    var height1 = game.height/2;
+    var height2 = 150;
+    var width1 = game.cache.getImage('cloud2').width/2;
+    var width2 = game.width - game.cache.getImage('cloud2').width*1.5;
+    var width3 = (width1 + width2) / 2;
 
-   //y coordinates
-   //100
-   var h1 = game.world.height / 4.4;
-   //250
-   var h2 = game.world.height / 2.2;
-   //345ish
-   var h3 = game.world.height / 1.88;
-   //400
-   var h4 = game.world.height / 1.7;
-   //500
-   var h5 = game.world.height / 1.3;
+    cloud1 = game.add.sprite(width1, height1, 'cloud2');
+    cloud2 = game.add.sprite(width2, height1, 'cloud2');
+    cloud3 = game.add.sprite(width3, height1, 'cloud2');
+    cloud4 = game.add.sprite((width1 + width3) / 2, height2, 'cloud2');
+    cloud4.movingLeft = true;
 
-   //x coordinates
-   //900
-   var w1 = ( game.world.width / 4 ) * 3;
-   //500
-   var w2 = game.world.width / 2.4;
-   //100
-   var w3 = game.world.width / 12;
-   //850
-   var w4 = game.world.width / 1.4;
-   //800
-   var w5 = (game.world.width / 3) * 2;
-   //25
-   var w6 = game.world.width / 48;
+    cloud5 = game.add.sprite((width2 + width3) / 2, height2, 'cloud2');
 
-   //platform height
-   //16
-   var ph1 = game.world.height / 40.625;
-   //50
-   var ph2 = game.world.height / 13;
+    platforms.add(cloud1);
+    platforms.add(cloud2);
+    platforms.add(cloud3);
+    platforms.add(cloud4);
+    platforms.add(cloud5);
 
-   //TOP 3 PLATFORMS
-   var pSprite = game.add.sprite(w1, h1, 'cloud1');
-   pSprite.width = l1; pSprite.height = ph1;
-   platforms.add(pSprite);
+    ground = game.add.sprite(0, 450, 'grassFloor');
+    platforms.add(ground);
 
-   pSprite = game.add.sprite(w2, h1, 'cloud1');
-   pSprite.width = l1; pSprite.height = ph1;
-   platforms.add(pSprite);
-
-   pSprite = game.add.sprite(w3, h1, 'cloud1');
-   pSprite.width = l1; pSprite.height = ph1;
-   platforms.add(pSprite);
-
-   //platform on right below top 3
-   pSprite = game.add.sprite(game.world.width - l1, h2, 'cloud1');
-   pSprite.width = l1; pSprite.height = ph1;
-   platforms.add(pSprite);
-
-   //platform on left below
-   pSprite = game.add.sprite(0, h2, 'cloud1');
-   pSprite.width = l1; pSprite.height = ph1;
-   platforms.add(pSprite);
-
-   //platform on right above ground
-   //pSprite = game.add.sprite(w5, h4, 'platform');
-   //pSprite.width = l2; pSprite.height = ph1;
-   //platforms.add(pSprite);
-
-   //middle bottom platform
-   pSprite = game.add.sprite((game.world.width / 2) - (l2 / 2), h4, 'cloud1');
-   pSprite.width = l2; pSprite.height = ph1;
-   platforms.add(pSprite);
-
-   ground = game.add.sprite(0, 450, 'grassFloor');
-   platforms.add(ground);
-
-   platforms.setAll('body.immovable', true);
+    platforms.setAll('body.immovable', true);
 }
 function generateCoins(){
     dropPoint = game.rnd.between(100,900);
@@ -293,6 +238,7 @@ function generateEnemy(){
     enemy.animations.play('flap', 10, true);
     enemy.facingLeft = true;
     enemy.anchor.setTo(0.5, 0.5);
+    enemy.scale.setTo(0.75);
 
     game.physics.arcade.enable(enemy);
     enemy.body.collideWorldBounds = true;
@@ -341,17 +287,28 @@ function enemyFadeIn(){
         }
     })
 }
+function slideCloud(cloud){
+    if(cloud.body.x < game.cache.getImage('cloud2').x){
+        cloud.movingLeft = false;
+    }
+    if(cloud.body.x > (game.width - game.cache.getImage('cloud2').width)){
+        cloud.movingLeft = true;
+    }
+    if(cloud.movingLeft){
+        cloud.body.x += -1;
+    }
+    else{
+        cloud.body.x += 1;
+    }
+}
 
 
 /*
-- collisions by transparency
-- 'rounder' level design
-- easier enemy AI -> or destruction
-- different value coins by height
-- how to play screen
-- why to play screen
-- pause menu
-- music/SFX
-- Universal Bitmap font for title Screen, buttons and score
-- consider other control orientations
+- easier enemy AI -> or destruction - Group
+- how to play screen - ?
+- why to play screen - ?
+- pause menu - Nolan
+- music/SFX - Kenny
+- Universal Bitmap font for title Screen, buttons and score - Kenny
+- consider other control orientations - ?
  */
