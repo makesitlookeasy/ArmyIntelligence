@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../ArmyIntelligence/temp" />
       <excludeFolder url="file://$MODULE_DIR$/../ArmyIntelligence/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/FlapFlop/platforms" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

@@ -383,3 +383,17 @@ function enemyFadeIn(){
     })
 >>>>>>> a1db831b19b60f40886fcda1704a737eed5db757
 }
+
+
+/*
+- collisions by transparency
+- 'rounder' level design
+- easier enemy AI -> or destruction
+- different value coins by height
+- how to play screen
+- why to play screen
+- pause menu
+- music/SFX
+- Universal Bitmap font for title Screen, buttons and score
+- consider other control orientations
+ */
