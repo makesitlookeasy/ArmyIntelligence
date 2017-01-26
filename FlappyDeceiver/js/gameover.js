@@ -12,7 +12,7 @@ var gameoverState = {
         backButton.onInputDown.add(backClick, this);
         backButton.onInputUp.add(backRelease, this);
 
-        scoreText = game.add.bitmapText(0, 0, 'gem', 'SCORE: ', 64);
+        scoreText = game.add.bitmapText(0, 0, 'bubble', 'SCORE: ', 64);
         scoreText.text = 'SCORE: ' + score;
     }
 };
