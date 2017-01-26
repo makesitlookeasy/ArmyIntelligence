@@ -30,7 +30,7 @@ var loadState = {
         game.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32, 6);
 
         game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
-        game.load.bitmapFont('bubble', 'assets/fonts/BubbleFont/font.png', 'assets/fonts/BubbleFont/font.fnt');
+        game.load.bitmapFont('bubble', 'assets/fonts/BubbleFontBlack/font.png', 'assets/fonts/BubbleFontBlack/font.fnt');
     },
 
     create: function(){
