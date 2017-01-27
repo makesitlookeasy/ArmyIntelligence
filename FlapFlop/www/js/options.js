@@ -16,6 +16,12 @@ var optionsState = {
         keyboardButton.onInputDown.add(keyboardClick, this);
         keyboardButton.onInputUp.add(keyboardRelease, this);
 
+        /*var whyx = keyboardButtonx;
+        var whyy = keyboardButtony + 120;
+        whyButton = game.add.button(whyx, whyy, 'back',null, this);
+        whyButton.onInputDown.add(whyClick, this);
+        whyButton.onInputUp.add(whyRelease, this);*/
+
         checkmark = game.add.sprite(600, 80, 'checkmark');
         checkmark.scale.set(0.5);
     }
@@ -40,3 +46,9 @@ function keyboardRelease(){
     }
     touchControls = !touchControls;
 }
+/*function whyClick(){
+    whyButton.loadTexture('backPressed',0);
+}
+function whyRelease(){
+    //game.state.start('why');
+}*/
