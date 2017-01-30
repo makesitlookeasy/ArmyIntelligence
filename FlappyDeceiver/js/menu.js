@@ -1,3 +1,6 @@
+var music;
+var musicPlaying = false;
+
 var menuState = {
     create: function(){
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -17,11 +20,18 @@ var menuState = {
         optionsButton.onInputDown.add(optionsClick, this);
         optionsButton.onInputUp.add(optionsRelease, this);
 
-    },
-    start: function(){
-        game.state.start('play');
-    },
+        if(!musicPlaying){
+            musicPlaying = true;
+            music = game.add.audio('music');
+            music.onLoop.add(playMusic, this);
+            music.play('', 0, 1, true);
+        }
+    }
 };
+
+function playMusic(){
+    music.play('', 0, 1, true);
+}
 
 function startClick(){
     startButton.loadTexture('startPressed', 0);
