@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlappyDeceiver/assets/sprites/downArrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlappyDeceiver/assets/sprites/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlapFlop/www/js/why.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/help.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlapFlop/www/FlappyDeceiver/js/startup.js" afterPath="$PROJECT_DIR$/FlapFlop/www/FlappyDeceiver/js/startup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlapFlop/www/index.html" afterPath="$PROJECT_DIR$/FlapFlop/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlapFlop/www/js/options.js" afterPath="$PROJECT_DIR$/FlapFlop/www/js/options.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlapFlop/www/js/startup.js" afterPath="$PROJECT_DIR$/FlapFlop/www/js/startup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/index.html" afterPath="$PROJECT_DIR$/FlappyDeceiver/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/startup.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/startup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/.tmp/" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/temp/" />
@@ -100,8 +87,8 @@
       <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="293" column="14" lean-forward="false" selection-start-line="293" selection-start-column="14" selection-end-line="293" selection-end-column="14" />
+            <state relative-caret-position="299">
+              <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -158,9 +145,9 @@
       <find>time</find>
       <find>check</find>
       <find>flipte</find>
-      <find>ground</find>
       <find>random</find>
       <find>gem</find>
+      <find>ground</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -396,12 +383,12 @@
       <workItem from="1485072337981" duration="2245000" />
       <workItem from="1485221444861" duration="1552000" />
       <workItem from="1485395594752" duration="7279000" />
-      <workItem from="1485737853473" duration="7488000" />
+      <workItem from="1485737853473" duration="7636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83182000" />
+    <option name="totallyTimeSpent" value="83330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="23" width="1150" height="752" extended-state="0" />
@@ -832,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="293" column="14" lean-forward="false" selection-start-line="293" selection-start-column="14" selection-end-line="293" selection-end-column="14" />
+        <state relative-caret-position="299">
+          <caret line="60" column="22" lean-forward="true" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />

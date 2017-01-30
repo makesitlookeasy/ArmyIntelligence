@@ -52,8 +52,6 @@ var playState = {
         game.physics.arcade.collide(coin, platforms);
         game.physics.arcade.collide(coin, bird, collectCoin);
         game.physics.arcade.collide(enemies, platforms);
-        game.physics.arcade.collide(bird, ground);
-        game.physics.arcade.collide(enemies, ground);
 
         game.physics.arcade.collide(bird, enemies, gameOver);
         game.physics.arcade.collide(enemies, enemies);
