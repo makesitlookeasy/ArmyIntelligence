@@ -34,7 +34,7 @@ var loadState = {
         game.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32, 6);
 
         game.load.bitmapFont('gem', 'assets/fonts/bitmapFonts/gem.png', 'assets/fonts/bitmapFonts/gem.xml');
-        game.load.bitmapFont('bubble', 'assets/fonts/BubbleFontBlack/font.png', 'assets/fonts/BubbleFontBlack/font.fnt');
+        game.load.bitmapFont('bubble', 'assets/fonts/BubbleFontShadow/font.png', 'assets/fonts/BubbleFontShadow/font.fnt');
 
         game.load.audio('music', ['assets/sfx/FlapFlopEpic.mp3', 'assets/sfx/FlapFlopEpic.ogg']);
         game.load.audio('coinPickup', ['assets/sfx/CarribeanCoin.mp3', 'assets/sfx/CarribeanCoin.ogg']);

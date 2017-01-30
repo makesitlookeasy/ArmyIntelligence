@@ -7,19 +7,29 @@ var menuState = {
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         background = game.add.sprite(0, 0, 'menuBackground');
 
-        title = game.add.sprite(game.width/2 - game.cache.getImage('title').width/2, 50,'title');
+        title = game.add.bitmapText(150, 100, 'bubble', 'FLAP FLOP', 90);
 
-        var startx = game.width/2 - game.cache.getImage('start').width/2;
-        var starty = game.height/2;
-        startButton = game.add.button(startx, starty, 'start', null, this);
+        var buttonWidth = game.cache.getImage('blankButton').width;
+        var buttonHeight = game.cache.getImage('blankButton').height;
+
+        var startx = game.width/2 - buttonWidth/2;
+        var starty = game.height/2 - 60;
+        startButton = game.add.button(startx, starty, 'blankButton', null, this);
         startButton.onInputDown.add(startClick, this);
         startButton.onInputUp.add(startRelease, this);
+        startText = game.add.bitmapText(startx + buttonWidth/4, starty + buttonHeight/4, 'bubble', 'Start', 40);
 
-        var optionsx = game.width/2 - game.cache.getImage('options').width/2;
-        var optionsy = game.height/2 + game.cache.getImage('options').height;
-        optionsButton = game.add.button(optionsx,optionsy,'options', null, this);
+        var optionsx = game.width/2 - buttonWidth/2;
+        var optionsy = game.height/2 + buttonHeight - 40;
+        optionsButton = game.add.button(optionsx,optionsy,'blankButton', null, this);
         optionsButton.onInputDown.add(optionsClick, this);
         optionsButton.onInputUp.add(optionsRelease, this);
+
+        var helpx = game.width/2 - buttonWidth/2;
+        var helpy = game.height/2 + buttonHeight + buttonHeight - 20;
+        helpButton = game.add.button(helpx,helpy,'blankButton', null, this);
+        helpButton.onInputDown.add(helpClick, this);
+        helpButton.onInputUp.add(helpRelease, this);
 
         if(!musicPlaying){
             musicPlaying = true;
@@ -29,11 +39,6 @@ var menuState = {
         }
         coinSound = game.add.audio('coinPickup');
 
-        var helpx = game.width/2 - game.cache.getImage('blankButton').width/2;
-        var helpy = game.height/2 + game.cache.getImage('options').height + game.cache.getImage('blankButton').height;
-        helpButton = game.add.button(helpx,helpy,'blankButton', null, this);
-        helpButton.onInputDown.add(helpClick, this);
-        helpButton.onInputUp.add(helpRelease, this);
     }
 };
 
@@ -42,13 +47,13 @@ function playMusic(){
 }
 
 function startClick(){
-    startButton.loadTexture('startPressed', 0);
+    startButton.loadTexture('blankButtonPressed', 0);
 }
 function startRelease(){
     game.state.start('play');
 }
 function optionsClick(){
-    optionsButton.loadTexture('optionsPressed',0);
+    optionsButton.loadTexture('blankButtonPressed',0);
 }
 function optionsRelease(){
     game.state.start('options');

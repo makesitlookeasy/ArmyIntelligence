@@ -32,16 +32,17 @@ var playState = {
         game.physics.setBoundsToWorld();
         enemies = game.add.physicsGroup();
         coins = game.add.physicsGroup();
+        generateButtons();
         generateEnemy();
         generatePlatforms();
         generatePlayer();
         generateCoins();
-        generateButtons();
         score = 0;
         facingLeft = true;
         randomInterval = game.rnd.integerInRange(300,800);
         scoreText = game.add.bitmapText(0, 0, 'bubble', 'SCORE: ', 32);
     },
+
     update: function(){
         score++;
         scoreText.text = 'SCORE: ' + score;
@@ -60,15 +61,15 @@ var playState = {
         bird.body.velocity.x = 0;
         timeElapsed++;
         moveButtons();
-        buttonPosition();
         motion();
-        keyboardControls();
         flipEnemies();
         enemyFadeIn();
+        buttonPosition();
+        keyboardControls();
 
         //slideCloud(cloud4);
         //slideCloud(cloud5);
-    },
+    }
 };
 
 function moveButtons(){
