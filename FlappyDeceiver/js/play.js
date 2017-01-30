@@ -32,9 +32,9 @@ var playState = {
         game.physics.setBoundsToWorld();
         enemies = game.add.physicsGroup();
         coins = game.add.physicsGroup();
-        generateButtons();
         generateEnemy();
         generatePlatforms();
+        generateButtons();
         generatePlayer();
         generateCoins();
         score = 0;
@@ -60,12 +60,14 @@ var playState = {
 
         bird.body.velocity.x = 0;
         timeElapsed++;
+        buttonPosition();
+        keyboardControls();
         moveButtons();
         motion();
         flipEnemies();
         enemyFadeIn();
-        buttonPosition();
-        keyboardControls();
+
+
 
         //slideCloud(cloud4);
         //slideCloud(cloud5);
