@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/options.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/options.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" />
     </list>
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/.tmp/" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/temp/" />
@@ -69,28 +69,28 @@
       <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="options.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/options.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+            <state relative-caret-position="448">
+              <caret line="279" column="21" lean-forward="true" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -108,7 +108,6 @@
                 <element signature="n#!!block;n#generateEnemy#0" expanded="false" />
                 <element signature="n#!!block;n#flipEnemies#0" expanded="false" />
                 <element signature="n#!!block;n#gameOver#0" expanded="false" />
-                <element signature="n#!!block;n#collectCoin#0" expanded="false" />
                 <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
                 <element signature="n#!!block;n#slideCloud#0" expanded="false" />
               </folding>
@@ -168,10 +167,10 @@
         <option value="$PROJECT_DIR$/FlappyDeceiver/index.html" />
         <option value="$PROJECT_DIR$/FlappyDeceiver/js/startup.js" />
         <option value="$PROJECT_DIR$/FlappyDeceiver/js/gameover.js" />
-        <option value="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" />
-        <option value="$PROJECT_DIR$/FlappyDeceiver/js/play.js" />
         <option value="$PROJECT_DIR$/FlappyDeceiver/js/load.js" />
         <option value="$PROJECT_DIR$/FlappyDeceiver/js/options.js" />
+        <option value="$PROJECT_DIR$/FlappyDeceiver/js/menu.js" />
+        <option value="$PROJECT_DIR$/FlappyDeceiver/js/play.js" />
       </list>
     </option>
   </component>
@@ -387,12 +386,12 @@
       <workItem from="1485072337981" duration="2245000" />
       <workItem from="1485221444861" duration="1552000" />
       <workItem from="1485395594752" duration="7279000" />
-      <workItem from="1485737853473" duration="8897000" />
+      <workItem from="1485737853473" duration="9216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84591000" />
+    <option name="totallyTimeSpent" value="84910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="23" width="1150" height="752" extended-state="0" />
@@ -530,7 +529,6 @@
             <element signature="n#!!block;n#generateEnemy#0" expanded="false" />
             <element signature="n#!!block;n#flipEnemies#0" expanded="false" />
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
-            <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
@@ -668,7 +666,6 @@
             <element signature="n#!!block;n#generateEnemy#0" expanded="false" />
             <element signature="n#!!block;n#flipEnemies#0" expanded="false" />
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
-            <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
@@ -797,10 +794,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/options.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+        <state relative-caret-position="448">
+          <caret line="279" column="21" lean-forward="true" selection-start-line="279" selection-start-column="21" selection-end-line="279" selection-end-column="21" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -818,34 +839,9 @@
             <element signature="n#!!block;n#generateEnemy#0" expanded="false" />
             <element signature="n#!!block;n#flipEnemies#0" expanded="false" />
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
-            <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="39" lean-forward="false" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/load.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/options.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,5 @@
 var music;
+var coinSound;
 var musicPlaying = false;
 
 var menuState = {
@@ -26,6 +27,7 @@ var menuState = {
             music.onLoop.add(playMusic, this);
             music.play('', 0, 1, true);
         }
+        coinSound = game.add.audio('coinPickup');
 
         var helpx = game.width/2 - game.cache.getImage('blankButton').width/2;
         var helpy = game.height/2 + game.cache.getImage('options').height + game.cache.getImage('blankButton').height;

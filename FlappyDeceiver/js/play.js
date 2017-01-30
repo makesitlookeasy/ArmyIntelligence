@@ -65,8 +65,9 @@ var playState = {
         keyboardControls();
         flipEnemies();
         enemyFadeIn();
-        slideCloud(cloud4);
-        slideCloud(cloud5);
+
+        //slideCloud(cloud4);
+        //slideCloud(cloud5);
     },
 };
 
@@ -276,6 +277,7 @@ function gameOver(bird, enemy){
 }
 function collectCoin(coin, bird){
     coin.kill();
+    coinSound.play();
     score += 500;
     generateCoins();
 }
@@ -289,6 +291,7 @@ function enemyFadeIn(){
         }
     })
 }
+
 function slideCloud(cloud){
     if(cloud.body.x < game.cache.getImage('cloud2').x){
         cloud.movingLeft = false;
