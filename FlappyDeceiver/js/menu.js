@@ -26,6 +26,12 @@ var menuState = {
             music.onLoop.add(playMusic, this);
             music.play('', 0, 1, true);
         }
+
+        var helpx = game.width/2 - game.cache.getImage('blankButton').width/2;
+        var helpy = game.height/2 + game.cache.getImage('options').height + game.cache.getImage('blankButton').height;
+        helpButton = game.add.button(helpx,helpy,'blankButton', null, this);
+        helpButton.onInputDown.add(helpClick, this);
+        helpButton.onInputUp.add(helpRelease, this);
     }
 };
 
@@ -44,4 +50,10 @@ function optionsClick(){
 }
 function optionsRelease(){
     game.state.start('options');
+}
+function helpClick(){
+    helpButton.loadTexture('blankButtonPressed', 0);
+}
+function helpRelease(){
+    game.state.start('help');
 }

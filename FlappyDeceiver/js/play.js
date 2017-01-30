@@ -49,11 +49,16 @@ var playState = {
             generateEnemy();
         }
         game.physics.arcade.collide(bird, platforms);
-        game.physics.arcade.collide(bird, enemies, gameOver);
+        game.physics.arcade.collide(coin, platforms);
+        game.physics.arcade.collide(coin, bird, collectCoin);
         game.physics.arcade.collide(enemies, platforms);
+        game.physics.arcade.collide(bird, ground);
+        game.physics.arcade.collide(enemies, ground);
+
+        game.physics.arcade.collide(bird, enemies, gameOver);
         game.physics.arcade.collide(enemies, enemies);
         game.physics.arcade.collide(coins, platforms);
-        game.physics.arcade.collide(coins, bird, collectCoin);
+
         bird.body.velocity.x = 0;
         timeElapsed++;
         moveButtons();
@@ -239,7 +244,6 @@ function generateEnemy(){
     enemy.facingLeft = true;
     enemy.anchor.setTo(0.5, 0.5);
     enemy.scale.setTo(0.75);
-
     game.physics.arcade.enable(enemy);
     enemy.body.collideWorldBounds = true;
     enemy.body.bounce.setTo(1,1);
@@ -272,7 +276,7 @@ function gameOver(bird, enemy){
         game.state.start('gameover');
     }
 }
-function collectCoin(bird, coin){
+function collectCoin(coin, bird){
     coin.kill();
     score += 500;
     generateCoins();
@@ -301,14 +305,3 @@ function slideCloud(cloud){
         cloud.body.x += 1;
     }
 }
-
-
-/*
-- easier enemy AI -> or destruction - Group
-- how to play screen - ?
-- why to play screen - ?
-- pause menu - Nolan
-- music/SFX - Kenny
-- Universal Bitmap font for title Screen, buttons and score - Kenny
-- consider other control orientations - ?
- */
