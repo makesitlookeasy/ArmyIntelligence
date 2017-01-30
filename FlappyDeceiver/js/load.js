@@ -26,6 +26,8 @@ var loadState = {
         game.load.image('xmark', 'assets/sprites/xmark.png');
         game.load.image('line', 'assets/sprites/line.png');
         game.load.image('down', 'assets/sprites/downArrow.png');
+        game.load.image('soundOn', 'assets/sprites/soundOn.png');
+        game.load.image('soundOff', 'assets/sprites/soundOff.png');
 
         game.load.spritesheet('bird', 'assets/sprites/birds.png', 64, 64, 32);
         game.load.spritesheet('bird2', 'assets/sprites/birds2.png', 64, 64, 32);

@@ -1,4 +1,5 @@
 var touchControls = false;
+var audioOn = true;
 
 var optionsState = {
     create: function(){
@@ -24,6 +25,10 @@ var optionsState = {
 
         checkmark = game.add.sprite(600, 80, 'checkmark');
         checkmark.scale.set(0.5);
+
+        audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOn', null, this);
+        audioButton.scale.setTo(0.25);
+        audioButton.onInputUp.add(audioRelease, this);
     }
 };
 
@@ -45,6 +50,19 @@ function keyboardRelease(){
         checkmark.loadTexture('xmark', 0);
     }
     touchControls = !touchControls;
+}
+
+function audioRelease(){
+    if(audioOn){
+        audioButton.loadTexture('soundOff', 0);
+        game.sound.mute = true;
+        audioOn = false;
+    }
+    else{
+        audioButton.loadTexture('soundOn', 0);
+        game.sound.mute = false;
+        audioOn = true;
+    }
 }
 
 function whyClick(){
