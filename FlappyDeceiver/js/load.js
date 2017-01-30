@@ -20,8 +20,12 @@ var loadState = {
         game.load.image('backPressed', 'assets/sprites/BackButtonPressed.png');
         game.load.image('KeyboardButton', 'assets/sprites/KeyboardButton.png');
         game.load.image('KeyboardButtonPressed', 'assets/sprites/KeyboardButtonPressed.png');
+
         game.load.image('blankButton', 'assets/sprites/BlankButton.png');
         game.load.image('blankButtonPressed', 'assets/sprites/BlankButtonPressed.png');
+        game.load.image('blankButtonRed', 'assets/sprites/BlankButtonRed.png');
+        game.load.image('redPressed', 'assets/sprites/BlankButtonPressedRed.png');
+
         game.load.image('checkmark', 'assets/sprites/checkmark.png');
         game.load.image('xmark', 'assets/sprites/xmark.png');
         game.load.image('line', 'assets/sprites/line.png');

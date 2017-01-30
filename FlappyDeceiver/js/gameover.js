@@ -1,25 +1,29 @@
+var gbackButton;
 
 var gameoverState = {
     create: function(){
 
         background = game.add.sprite(0, 0, 'gameOverBackground');
 
-        gameover = game.add.sprite(game.width/2 - game.cache.getImage('gameOver').width/2, 50,'gameOver');
+        gameoverText = game.add.bitmapText(150, 100, 'bubble', 'GAME OVER', 90);
 
-        var backx = game.width/2 - game.cache.getImage('start').width/2;
-        var backy = game.height/2 + game.cache.getImage('start').height;
-        backButton = game.add.button(backx, backy, 'back', null, this);
-        backButton.onInputDown.add(backClick, this);
-        backButton.onInputUp.add(backRelease, this);
+        var buttonHeight = game.cache.getImage('blankButton').height;
 
-        scoreText = game.add.bitmapText(0, 0, 'bubble', 'SCORE: ', 64);
+        var gbackx = game.width/2 - game.cache.getImage('start').width/2;
+        var gbacky = game.height/2 + game.cache.getImage('start').height;
+        gbackButton = game.add.button(gbackx, gbacky, 'blankButtonRed', null, this);
+        gbackButton.onInputDown.add(gbackClick, this);
+        gbackButton.onInputUp.add(gbackRelease, this);
+        gbText = game.add.bitmapText(gbackx + 80, gbacky + buttonHeight/4, 'bubble', 'Back', 40);
+
+        scoreText = game.add.bitmapText(250, 200, 'bubble', 'SCORE: ', 64);
         scoreText.text = 'SCORE: ' + score;
     }
 };
 
-function backClick(){
-    backButton.loadTexture('backPressed', 0);
+function gbackClick(){
+    gbackButton.loadTexture('redPressed', 0);
 }
-function backRelease(){
+function gbackRelease(){
     game.state.start('menu');
 }

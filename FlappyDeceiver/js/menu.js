@@ -31,6 +31,7 @@ var menuState = {
         helpButton = game.add.button(helpx,helpy,'blankButton', null, this);
         helpButton.onInputDown.add(helpClick, this);
         helpButton.onInputUp.add(helpRelease, this);
+        helpText = game.add.bitmapText(helpx + 90, helpy + buttonHeight/4, 'bubble', 'Help', 40);
 
         if(!musicPlaying){
             musicPlaying = true;
