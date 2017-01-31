@@ -24,7 +24,7 @@ var optionsState = {
 
         var whyx = keyboardButtonx;
         var whyy = keyboardButtony + 100;
-        whyButton = game.add.button(whyx, whyy, 'back',null, this);
+        whyButton = game.add.button(whyx, whyy, 'blankButton', null, this);
         whyButton.onInputDown.add(whyClick, this);
         whyButton.onInputUp.add(whyRelease, this);
 
@@ -76,8 +76,9 @@ function audioRelease(){
 }
 
 function whyClick(){
-    whyButton.loadTexture('backPressed',0);
+    whyButton.loadTexture('blankButtonPressed',0);
 }
 function whyRelease(){
+    whyButton.loadTexture('blankButton',0);
     //game.state.start('why');
 }
