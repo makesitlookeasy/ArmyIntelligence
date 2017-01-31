@@ -9,7 +9,7 @@ var optionsState = {
         var buttonHeight = game.cache.getImage('blankButton').height;
 
         var backx = game.width/2 - game.cache.getImage('start').width/2;
-        var backy = game.height/2 + game.cache.getImage('start').height;
+        var backy = game.height - game.cache.getImage('start').height - 20;
         backButton = game.add.button(backx, backy, 'blankButton', null, this);
         backButton.onInputDown.add(backClick, this);
         backButton.onInputUp.add(backRelease, this);
@@ -23,7 +23,7 @@ var optionsState = {
         kText = game.add.bitmapText(keyboardButtonx + 16, keyboardButtony + buttonHeight/4, 'bubble', 'Keyboard', 40);
 
         var whyx = keyboardButtonx;
-        var whyy = (keyboardButtony + backy)/2;
+        var whyy = (keyboardButtony + buttonHeight + 20);
         whyButton = game.add.button(whyx, whyy, 'blankButton', null, this);
         whyButton.onInputDown.add(whyClick, this);
         whyButton.onInputUp.add(whyRelease, this);
