@@ -23,7 +23,7 @@ var optionsState = {
         kText = game.add.bitmapText(keyboardButtonx + 16, keyboardButtony + buttonHeight/4, 'bubble', 'Keyboard', 40);
 
         var whyx = keyboardButtonx;
-        var whyy = keyboardButtony + 100;
+        var whyy = (keyboardButtony + backy)/2;
         whyButton = game.add.button(whyx, whyy, 'blankButton', null, this);
         whyButton.onInputDown.add(whyClick, this);
         whyButton.onInputUp.add(whyRelease, this);
@@ -80,5 +80,5 @@ function whyClick(){
 }
 function whyRelease(){
     whyButton.loadTexture('blankButton',0);
-    //game.state.start('why');
+    game.state.start('why');
 }

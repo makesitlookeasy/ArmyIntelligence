@@ -10,5 +10,6 @@ game.state.add('options', optionsState);
 game.state.add('play', playState)
 game.state.add('gameover', gameoverState);
 game.state.add('help', helpState);
+game.state.add('why',whyState);
 
 game.state.start('boot');
