@@ -194,8 +194,7 @@ function generateButtons(){
     jumpButton.onInputDown.add(jumpClick, this);
     jumpButton.scale.setTo(4,4);
 
-    pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'orb', null, this);
-    pauseButton.scale.setTo(.5,.5);
+    pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'pauseIcon', null, this);
     pauseButton.onInputUp.add(pauseClick, this);
 }
 function generatePlatforms(){
@@ -305,8 +304,7 @@ function pauseClick(){
     isPaused = !isPaused;
     if (isPaused){
         pauseButton.destroy();
-        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'play', null, this);
-        pauseButton.scale.setTo(.45,.45);
+        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'playIcon', null, this);
         pauseButton.onInputUp.add(pauseClick, this);
         //enemies.body.velocity.setTo(0,0);
         bird.body.velocity.setTo(0,0);
@@ -316,8 +314,7 @@ function pauseClick(){
     }
     else if (!isPaused){
         pauseButton.destroy();
-        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'pause', null, this);
-        pauseButton.scale.setTo(.5,.5);
+        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'pauseIcon', null, this);
         pauseButton.onInputUp.add(pauseClick, this);
         menuButton.destroy();
         audioButton.destroy();
