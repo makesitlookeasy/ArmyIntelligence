@@ -316,6 +316,7 @@ function pauseClick(){
         pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'pauseIcon', null, this);
         pauseButton.onInputUp.add(pauseClick, this);
         menuButton.destroy();
+        menuButtonText.destroy();
         audioButton.destroy();
         bird.body.gravity.y = 500;
         unpauseEnemy();
@@ -325,7 +326,9 @@ function pauseMenu(){
     var menux = game.width/2 - game.cache.getImage('blankButton').width/2;
     var menuy = game.height/2;
 
+    var buttonHeight = game.cache.getImage('blankButton').height;
     menuButton = game.add.button(menux, menuy, 'blankButton', null, this);
+    menuButtonText = game.add.bitmapText(menux + 75, menuy + buttonHeight/4, 'bubble', 'Menu', 40);
     menuButton.onInputDown.add(menuClick, this);
     menuButton.onInputUp.add(menuRelease, this);
     if(audioOn){

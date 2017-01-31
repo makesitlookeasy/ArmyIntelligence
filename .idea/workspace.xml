@@ -33,8 +33,8 @@
       <file leaf-file-name="menu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+            <state relative-caret-position="180">
+              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -60,31 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LICENSE.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FlappyDeceiver/LICENSE.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FlappyDeceiver/README.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="48" lean-forward="true" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
+            <state relative-caret-position="238">
+              <caret line="325" column="19" lean-forward="true" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -95,6 +75,7 @@
                 <element signature="n#!!block;n#leftDown#0" expanded="false" />
                 <element signature="n#!!block;n#leftUp#0" expanded="false" />
                 <element signature="n#!!block;n#jumpClick#0" expanded="false" />
+                <element signature="n#!!block;n#generateButtons#0" expanded="false" />
                 <element signature="n#!!block;n#generatePlatforms#0" expanded="false" />
                 <element signature="n#!!block;n#generateCoins#0" expanded="false" />
                 <element signature="n#!!block;n#generatePlayer#0" expanded="false" />
@@ -103,8 +84,6 @@
                 <element signature="n#!!block;n#gameOver#0" expanded="false" />
                 <element signature="n#!!block;n#collectCoin#0" expanded="false" />
                 <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
-                <element signature="n#!!block;n#pauseClick#0" expanded="false" />
-                <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
                 <element signature="n#!!block;n#menuClick#0" expanded="false" />
                 <element signature="n#!!block;n#menuRelease#0" expanded="false" />
                 <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
@@ -150,6 +129,7 @@
       <find>gem</find>
       <find>ground</find>
       <find>buttonposition</find>
+      <find>menubutt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -369,12 +349,12 @@
       <workItem from="1485072337981" duration="2245000" />
       <workItem from="1485221444861" duration="1552000" />
       <workItem from="1485395594752" duration="7279000" />
-      <workItem from="1485737853473" duration="18989000" />
+      <workItem from="1485737853473" duration="19337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94683000" />
+    <option name="totallyTimeSpent" value="95031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="23" width="1150" height="752" extended-state="0" />
@@ -505,6 +485,7 @@
             <element signature="n#!!block;n#leftDown#0" expanded="false" />
             <element signature="n#!!block;n#leftUp#0" expanded="false" />
             <element signature="n#!!block;n#jumpClick#0" expanded="false" />
+            <element signature="n#!!block;n#generateButtons#0" expanded="false" />
             <element signature="n#!!block;n#generatePlatforms#0" expanded="false" />
             <element signature="n#!!block;n#generateCoins#0" expanded="false" />
             <element signature="n#!!block;n#generatePlayer#0" expanded="false" />
@@ -513,8 +494,6 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
-            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
-            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
             <element signature="n#!!block;n#menuClick#0" expanded="false" />
             <element signature="n#!!block;n#menuRelease#0" expanded="false" />
             <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
@@ -648,6 +627,7 @@
             <element signature="n#!!block;n#leftDown#0" expanded="false" />
             <element signature="n#!!block;n#leftUp#0" expanded="false" />
             <element signature="n#!!block;n#jumpClick#0" expanded="false" />
+            <element signature="n#!!block;n#generateButtons#0" expanded="false" />
             <element signature="n#!!block;n#generatePlatforms#0" expanded="false" />
             <element signature="n#!!block;n#generateCoins#0" expanded="false" />
             <element signature="n#!!block;n#generatePlayer#0" expanded="false" />
@@ -656,8 +636,6 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
-            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
-            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
             <element signature="n#!!block;n#menuClick#0" expanded="false" />
             <element signature="n#!!block;n#menuRelease#0" expanded="false" />
             <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
@@ -789,14 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/help.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -812,14 +782,6 @@
           <folding>
             <marker date="1485832069000" expanded="true" signature="621:651" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,10 +817,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/help.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
+        <state relative-caret-position="238">
+          <caret line="325" column="19" lean-forward="true" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -869,6 +847,7 @@
             <element signature="n#!!block;n#leftDown#0" expanded="false" />
             <element signature="n#!!block;n#leftUp#0" expanded="false" />
             <element signature="n#!!block;n#jumpClick#0" expanded="false" />
+            <element signature="n#!!block;n#generateButtons#0" expanded="false" />
             <element signature="n#!!block;n#generatePlatforms#0" expanded="false" />
             <element signature="n#!!block;n#generateCoins#0" expanded="false" />
             <element signature="n#!!block;n#generatePlayer#0" expanded="false" />
@@ -877,8 +856,6 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
-            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
-            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
             <element signature="n#!!block;n#menuClick#0" expanded="false" />
             <element signature="n#!!block;n#menuRelease#0" expanded="false" />
             <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
