@@ -17,4 +17,22 @@ Usage
     The runnable project for a local host is in FlappyDeceiver/FlappyDeceiver/ and
     refers to the index.html file.
 
+Issues
+    Only minor bugs:
+        - keyboard checkmark always displays "check" when returning to options
+        - in game mute option does the same as above ^
+
+Future Plans
+    - Implement keyboard control switching
+        -> This would require creating more icons / visual indicator of the new controls
+    - Some code for moving platforms, but they are not "sticky" (sprites do not track when on top)
+
+Project resources
+    - Music/SFX by Kenny Rosenberg
+    - Bird spritesheet from/modified: http://opengameart.org/content/birds-spritesheet
+    - Arrow keys and matching orb icon from Phaser example library assets
+    - Speaker icons from: commons.wikimedia.org
+    - Checkmark/Xmark -> I honestly forget, but I always search for images labeled for re-use
+    - All other media created by Kenny Rosenberg
+
 

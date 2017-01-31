@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlappyDeceiver/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FlappyDeceiver/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/README.txt" afterPath="$PROJECT_DIR$/FlappyDeceiver/README.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/.tmp/" />
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/temp/" />
@@ -88,8 +85,8 @@
       <file leaf-file-name="README.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="82" lean-forward="true" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
+            <state relative-caret-position="285">
+              <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -377,12 +374,12 @@
       <workItem from="1485072337981" duration="2245000" />
       <workItem from="1485221444861" duration="1552000" />
       <workItem from="1485395594752" duration="7279000" />
-      <workItem from="1485737853473" duration="16594000" />
+      <workItem from="1485737853473" duration="17315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92288000" />
+    <option name="totallyTimeSpent" value="93009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1150" height="752" extended-state="0" />
@@ -872,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="82" lean-forward="true" selection-start-line="16" selection-start-column="82" selection-end-line="16" selection-end-column="82" />
+        <state relative-caret-position="285">
+          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding />
         </state>
       </provider>
