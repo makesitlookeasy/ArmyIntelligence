@@ -20,12 +20,13 @@ var helpState = {
           // vline.angle = 90;
           // vline.scale.set(2);
 
-
+        var buttonHeight = game.cache.getImage('blankButton').height;
         var backx = game.width/2 - game.cache.getImage('start').width/2;
-        var backy = game.height/2 + 2 * game.cache.getImage('start').height;
-        backButton = game.add.button(backx, backy, 'back', null, this);
+        var backy = game.height/2 + 2 * game.cache.getImage('start').height - 20;
+        backButton = game.add.button(backx, backy, 'blankButton', null, this);
         backButton.onInputDown.add(backClick, this);
         backButton.onInputUp.add(backRelease, this);
+        bText = game.add.bitmapText(backx + 80, backy + buttonHeight/4, 'bubble', 'Back', 40);
 
         //checkmark = game.add.sprite(600, 80, 'checkmark');
       //  checkmark.scale.set(0.5);
@@ -112,7 +113,7 @@ var helpState = {
 };
 
 function backClick(){
-    backButton.loadTexture('backPressed', 0);
+    backButton.loadTexture('blankButtonPressed', 0);
 }
 function backRelease(){
     game.state.start('menu');

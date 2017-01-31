@@ -5,17 +5,22 @@ var optionsState = {
     create: function(){
         background = game.add.sprite(0, 0, 'menuBackground');
 
+        var buttonWidth = game.cache.getImage('blankButton').width;
+        var buttonHeight = game.cache.getImage('blankButton').height;
+
         var backx = game.width/2 - game.cache.getImage('start').width/2;
         var backy = game.height/2 + game.cache.getImage('start').height;
-        backButton = game.add.button(backx, backy, 'back', null, this);
+        backButton = game.add.button(backx, backy, 'blankButton', null, this);
         backButton.onInputDown.add(backClick, this);
         backButton.onInputUp.add(backRelease, this);
+        bText = game.add.bitmapText(backx + 80, backy + buttonHeight/4, 'bubble', 'Back', 40);
 
         var keyboardButtonx = game.width/2 - game.cache.getImage('start').width/2 - 100;
         var keyboardButtony = 100;
-        keyboardButton = game.add.button(keyboardButtonx, keyboardButtony, 'KeyboardButton', null, this);
+        keyboardButton = game.add.button(keyboardButtonx, keyboardButtony, 'blankButton', null, this);
         keyboardButton.onInputDown.add(keyboardClick, this);
         keyboardButton.onInputUp.add(keyboardRelease, this);
+        kText = game.add.bitmapText(keyboardButtonx + 16, keyboardButtony + buttonHeight/4, 'bubble', 'Keyboard', 40);
 
         var whyx = keyboardButtonx;
         var whyy = keyboardButtony + 100;
@@ -26,23 +31,28 @@ var optionsState = {
         checkmark = game.add.sprite(600, 80, 'checkmark');
         checkmark.scale.set(0.5);
 
-        audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOn', null, this);
+        if(audioOn){
+            audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOn', null, this);
+        }
+        else{
+            audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOff', null, this);
+        }
         audioButton.scale.setTo(0.25);
         audioButton.onInputUp.add(audioRelease, this);
     }
 };
 
 function backClick(){
-    backButton.loadTexture('backPressed', 0);
+    backButton.loadTexture('blankButtonPressed', 0);
 }
 function backRelease(){
     game.state.start('menu');
 }
 function keyboardClick(){
-    keyboardButton.loadTexture('KeyboardButtonPressed', 0);
+    keyboardButton.loadTexture('blankButtonPressed', 0);
 }
 function keyboardRelease(){
-    keyboardButton.loadTexture('KeyboardButton', 0);
+    keyboardButton.loadTexture('blankButton', 0);
     if(touchControls){
         checkmark.loadTexture('checkmark', 0);
     }
