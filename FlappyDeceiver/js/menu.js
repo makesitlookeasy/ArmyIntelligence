@@ -52,6 +52,7 @@ function startClick(){
     startButton.loadTexture('blankButtonPressed', 0);
 }
 function startRelease(){
+    isPaused = false;
     game.state.start('play');
 }
 function optionsClick(){
