@@ -299,7 +299,6 @@ function enemyFadeIn(){
         }
     })
 }
-
 function pauseClick(){
     isPaused = !isPaused;
     if (isPaused){
@@ -355,7 +354,6 @@ function unpauseEnemy(){
         enemy.body.velocity.setTo(velx,vely);
     })
 }
-
 
 function slideCloud(cloud){
     if(cloud.body.x < game.cache.getImage('cloud2').x){

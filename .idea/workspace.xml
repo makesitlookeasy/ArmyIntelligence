@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91c8152b-8c37-4d2a-92ce-ee28145715e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/LICENSE.txt" afterPath="$PROJECT_DIR$/FlappyDeceiver/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/load.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/options.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/options.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" afterPath="$PROJECT_DIR$/FlappyDeceiver/js/play.js" />
     </list>
     <ignored path="$PROJECT_DIR$/../ArmyIntelligence/.tmp/" />
@@ -87,8 +83,8 @@
       <file leaf-file-name="play.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="306" column="131" lean-forward="false" selection-start-line="306" selection-start-column="131" selection-end-line="306" selection-end-column="131" />
+            <state relative-caret-position="193">
+              <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
               <folding>
                 <element signature="n#!!block;n#moveButtons#0" expanded="false" />
                 <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -107,6 +103,12 @@
                 <element signature="n#!!block;n#gameOver#0" expanded="false" />
                 <element signature="n#!!block;n#collectCoin#0" expanded="false" />
                 <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
+                <element signature="n#!!block;n#pauseClick#0" expanded="false" />
+                <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
+                <element signature="n#!!block;n#menuClick#0" expanded="false" />
+                <element signature="n#!!block;n#menuRelease#0" expanded="false" />
+                <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
+                <element signature="n#!!block;n#unpauseEnemy#0" expanded="false" />
                 <element signature="n#!!block;n#slideCloud#0" expanded="false" />
               </folding>
             </state>
@@ -367,12 +369,12 @@
       <workItem from="1485072337981" duration="2245000" />
       <workItem from="1485221444861" duration="1552000" />
       <workItem from="1485395594752" duration="7279000" />
-      <workItem from="1485737853473" duration="18649000" />
+      <workItem from="1485737853473" duration="18989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94343000" />
+    <option name="totallyTimeSpent" value="94683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="23" width="1150" height="752" extended-state="0" />
@@ -511,6 +513,12 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
+            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
+            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
+            <element signature="n#!!block;n#menuClick#0" expanded="false" />
+            <element signature="n#!!block;n#menuRelease#0" expanded="false" />
+            <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
+            <element signature="n#!!block;n#unpauseEnemy#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
         </state>
@@ -648,6 +656,12 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
+            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
+            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
+            <element signature="n#!!block;n#menuClick#0" expanded="false" />
+            <element signature="n#!!block;n#menuRelease#0" expanded="false" />
+            <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
+            <element signature="n#!!block;n#unpauseEnemy#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
         </state>
@@ -843,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FlappyDeceiver/js/play.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="306" column="131" lean-forward="false" selection-start-line="306" selection-start-column="131" selection-end-line="306" selection-end-column="131" />
+        <state relative-caret-position="193">
+          <caret line="191" column="18" lean-forward="true" selection-start-line="191" selection-start-column="18" selection-end-line="191" selection-end-column="18" />
           <folding>
             <element signature="n#!!block;n#moveButtons#0" expanded="false" />
             <element signature="n#!!block;n#buttonPosition#0" expanded="false" />
@@ -863,6 +877,12 @@
             <element signature="n#!!block;n#gameOver#0" expanded="false" />
             <element signature="n#!!block;n#collectCoin#0" expanded="false" />
             <element signature="n#!!block;n#enemyFadeIn#0" expanded="false" />
+            <element signature="n#!!block;n#pauseClick#0" expanded="false" />
+            <element signature="n#!!block;n#pauseMenu#0" expanded="false" />
+            <element signature="n#!!block;n#menuClick#0" expanded="false" />
+            <element signature="n#!!block;n#menuRelease#0" expanded="false" />
+            <element signature="n#!!block;n#pauseEnemy#0" expanded="false" />
+            <element signature="n#!!block;n#unpauseEnemy#0" expanded="false" />
             <element signature="n#!!block;n#slideCloud#0" expanded="false" />
           </folding>
         </state>
