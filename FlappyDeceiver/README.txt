@@ -33,6 +33,7 @@ Project resources
     - Arrow keys and matching orb icon from Phaser example library assets
     - Speaker icons from: commons.wikimedia.org
     - Checkmark/Xmark -> I honestly forget, but I always search for images labeled for re-use
+    - Bitmap font from http://www.fontspace.com/category/bitmap and modified with http://kvazars.com/littera/
     - All other media created by Kenny Rosenberg
 
 
