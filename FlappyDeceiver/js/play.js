@@ -27,6 +27,8 @@ var facingLeft;
 var score;
 var scoreText;
 
+var isPaused = false;
+
 var playState = {
     create: function(){
         game.physics.setBoundsToWorld();
@@ -44,30 +46,30 @@ var playState = {
     },
 
     update: function(){
-        score++;
-        scoreText.text = 'SCORE: ' + score;
-        if(score % 500 == 0){
-            generateEnemy();
-        }
+
         game.physics.arcade.collide(bird, platforms);
         game.physics.arcade.collide(coin, platforms);
         game.physics.arcade.collide(coin, bird, collectCoin);
         game.physics.arcade.collide(enemies, platforms);
-
         game.physics.arcade.collide(bird, enemies, gameOver);
         game.physics.arcade.collide(enemies, enemies);
         game.physics.arcade.collide(coins, platforms);
 
-        bird.body.velocity.x = 0;
-        timeElapsed++;
-        buttonPosition();
-        keyboardControls();
-        moveButtons();
-        motion();
-        flipEnemies();
-        enemyFadeIn();
-
-
+        if(!isPaused){
+            score++;
+            scoreText.text = 'SCORE: ' + score;
+            if(score % 500 == 0){
+                generateEnemy();
+            }
+            bird.body.velocity.x = 0;
+            timeElapsed++;
+            buttonPosition();
+            keyboardControls();
+            moveButtons();
+            motion();
+            flipEnemies();
+            enemyFadeIn();
+        }
 
         //slideCloud(cloud4);
         //slideCloud(cloud5);
@@ -191,6 +193,10 @@ function generateButtons(){
     jumpButton = game.add.button(position3, game.world.height - 120, 'orb', null, this);
     jumpButton.onInputDown.add(jumpClick, this);
     jumpButton.scale.setTo(4,4);
+
+    pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'orb', null, this);
+    pauseButton.scale.setTo(.5,.5);
+    pauseButton.onInputUp.add(pauseClick, this);
 }
 function generatePlatforms(){
     platforms = game.add.physicsGroup();
@@ -294,6 +300,65 @@ function enemyFadeIn(){
         }
     })
 }
+
+function pauseClick(){
+    isPaused = !isPaused;
+    if (isPaused){
+        pauseButton.destroy();
+        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'play', null, this);
+        pauseButton.scale.setTo(.45,.45);
+        pauseButton.onInputUp.add(pauseClick, this);
+        //enemies.body.velocity.setTo(0,0);
+        bird.body.velocity.setTo(0,0);
+        bird.body.gravity.y = 0;
+        pauseEnemy();
+        pauseMenu();
+    }
+    else if (!isPaused){
+        pauseButton.destroy();
+        pauseButton = game.add.button(game.world.width - 70, game.world.height - (game.world.height - 20), 'pause', null, this);
+        pauseButton.scale.setTo(.5,.5);
+        pauseButton.onInputUp.add(pauseClick, this);
+        menuButton.destroy();
+        audioButton.destroy();
+        bird.body.gravity.y = 500;
+        unpauseEnemy();
+    }
+}
+function pauseMenu(){
+    var menux = game.width/2 - game.cache.getImage('blankButton').width/2;
+    var menuy = game.height/2;
+
+    menuButton = game.add.button(menux, menuy, 'blankButton', null, this);
+    menuButton.onInputDown.add(menuClick, this);
+    menuButton.onInputUp.add(menuRelease, this);
+    if(audioOn){
+        audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOn', null, this);
+    }
+    else{
+        audioButton = game.add.button(game.width - 125, game.height - 125, 'soundOff', null, this);
+    }
+    audioButton.scale.setTo(0.25);
+    audioButton.onInputUp.add(audioRelease, this);
+
+}
+function menuClick(){
+    menuButton.loadTexture('blankButtonPressed', 0);
+}
+function menuRelease(){
+    game.state.start('menu');
+}
+function pauseEnemy(){
+    enemies.forEach(function(enemy){
+        enemy.body.velocity.setTo(0,0);
+    })
+}
+function unpauseEnemy(){
+    enemies.forEach(function(enemy){
+        enemy.body.velocity.setTo(velx,vely);
+    })
+}
+
 
 function slideCloud(cloud){
     if(cloud.body.x < game.cache.getImage('cloud2').x){
