@@ -27,6 +27,7 @@ var optionsState = {
         whyButton = game.add.button(whyx, whyy, 'blankButton', null, this);
         whyButton.onInputDown.add(whyClick, this);
         whyButton.onInputUp.add(whyRelease, this);
+        wtext = game.add.bitmapText(whyx + 16, whyy + buttonHeight/4, 'bubble', 'Why play?', 35);
 
         checkmark = game.add.sprite(600, 80, 'checkmark');
         checkmark.scale.set(0.5);
